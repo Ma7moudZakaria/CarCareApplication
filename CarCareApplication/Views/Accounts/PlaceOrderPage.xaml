@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:VM="clr-namespace:CarCareApplication.ViewModels.Account"            
+             FlowDirection="{x:Static Device.FlowDirection}"
+             BackgroundColor="{x:DynamicResource BackgroundColor}"
+             x:Class="CarCareApplication.Views.Accounts.PlaceOrderPage"
+             xmlns:resource="clr-namespace:CarCareApplication.Resources" 
+             xmlns:request="clr-namespace:CarCareApplication.Resources"
+                          Shell.NavBarHasShadow="False">
+    <ContentPage.BindingContext>
+        <VM:PlaceOrderViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" Margin="9">
+            <Label Text="{x:Static resource:Language.OrderDetails}" VerticalTextAlignment="Center"  FontSize="Subtitle" FontFamily="{x:DynamicResource Black}"  LineHeight="{OnPlatform Android=1.25, Default=-1}"/>
+
+            <Grid RowDefinitions="*,*,*,*,*"  VerticalOptions="Start" RowSpacing="10" HorizontalOptions="FillAndExpand">
+                <Frame Grid.Row="0" BackgroundColor="White">
+                    <Grid ColumnDefinitions="*,3*" >
+                        <Label Text="{x:Static resource:Language.Vehicle}" HorizontalOptions="Start" VerticalOptions="Center" Grid.Column="0" FontFamily="{x:DynamicResource Black}"/>
+                        <Label Text="{x:Binding CarType,Source={x:Static request:Request.Current}}" HorizontalOptions="Start" VerticalOptions="Center" Grid.Column="1" FontFamily="{x:DynamicResource Bold}" />
+                    </Grid>
+                </Frame>
+
+                <Frame Grid.Row="1" BackgroundColor="White">
+                    <Grid ColumnDefinitions="*,3*">
+                        <Label Text="{x:Static resource:Language.Service}" HorizontalOptions="Start" VerticalOptions="Center" Grid.Column="0" FontFamily="{x:DynamicResource Black}"/>
+                        <Label Text="{x:Binding Service,Source={x:Static request:Request.Current}}" HorizontalOptions="Start" VerticalOptions="Center" Grid.Column="1" FontFamily="{x:DynamicResource Bold}"/>
+                    </Grid>
+                </Frame>
+
+
+                <Frame Grid.Row="2" BackgroundColor="White">
+                    <Grid ColumnDefinitions="*,2*">
+                        <Label Text="{x:Static resource:Language.Address}" HorizontalOptions="Start" VerticalOptions="Center" Grid.Column="0" FontFamily="{x:DynamicResource Black}"/>
+                        <Label Text="{x:Binding Address,Source={x:Static request:Request.Current}}" HorizontalOptions="Start" MaxLines="1"  LineBreakMode="TailTruncation" 
+                               VerticalOptions="Center" Grid.Column="1" FontFamily="{x:DynamicResource Bold}"/>
+                    </Grid>
+                </Frame>
+
+
+                <Frame Grid.Row="3" BackgroundColor="White">
+                    <Grid ColumnDefinitions="*,3*">
+                        <Label Text="{x:Static resource:Language.BasePrice}" HorizontalOptions="Start" VerticalOptions="Center" Grid.Column="0" FontFamily="{x:DynamicResource Black}"/>
+                        <Label HorizontalOptions="Start" VerticalOptions="Center" Grid.Column="1" FontFamily="{x:DynamicResource Bold}">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{x:Binding Price,Source={x:Static request:Request.Current}}"/>
+                                    <Span Text=" "/>
+                                    <Span Text="{x:Static resource:Language.Currency}"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </Grid>
+                </Frame>
+
+
+                <Frame Grid.Row="4" BackgroundColor="White">
+                    <Grid ColumnDefinitions="*,3*">
+                        <Label Text="{x:Static resource:Language.DeliveryPrice}" HorizontalOptions="Start" VerticalOptions="Center" Grid.Column="0" FontFamily="{x:DynamicResource Black}"/>
+                        <Label HorizontalOptions="Start" VerticalOptions="Center" Grid.Column="1" FontFamily="{x:DynamicResource Bold}">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{x:Binding DeliveryPrice,Source={x:Static request:Request.Current}}"/>
+                                    <Span Text=" "/>
+                                    <Span Text="{x:Static resource:Language.Currency}"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </Grid>
+                </Frame>
+
+            </Grid>
+            <Button Text="{x:Static resource:Language.PlaceOrder}" VerticalOptions="EndAndExpand" HeightRequest="50" Command="{x:Binding PlaceOrderCommand}" FontFamily="{x:DynamicResource Bold}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

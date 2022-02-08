@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Shell.NavBarIsVisible="False"          
+             FlowDirection="{x:Static Device.FlowDirection}"
+             Shell.PresentationMode="ModalAnimated"
+             BackgroundColor="{x:DynamicResource BackgroundColor}"
+             xmlns:icons="clr-namespace:CarCareApplication.Resources.Fonts"
+             xmlns:resource="clr-namespace:CarCareApplication.Resources" 
+             x:Class="CarCareApplication.Views.Accounts.OrderDonePage">
+    
+            <StackLayout
+                HorizontalOptions="Center"
+                Spacing="0"
+                VerticalOptions="Center">
+                <!--  Payment status image  -->
+                <Image>
+                    <Image.Source>
+                        <FontImageSource Glyph="{x:Static icons:IconFont.CheckOutline}" FontFamily="Matrial" Size="Header" Color="#2ecc71"/>
+                    </Image.Source>
+                </Image>
+
+                <!--  Payment status label  -->
+                <Label
+                    Margin="0,40,0,0"
+                    Text="{x:Static resource:Language.OrderPlaced}" FontSize="Title" HorizontalTextAlignment="Center" FontFamily="{x:DynamicResource Bold}"/>
+
+                <!--  Payment description label  -->
+                <Label
+                    Margin="0,10,0,0"
+                    Text="{x:Static resource:Language.ThankYou}" FontSize="Subtitle" HorizontalTextAlignment="Center" FontFamily="{x:DynamicResource Bold}"/>
+
+                 <Button
+                    Margin="0,10,0,0"
+                    HeightRequest="50"
+                    x:Name="GoHome"
+                    Clicked="GoHome_Clicked" 
+                    Text="{x:Static resource:Language.GoBackHome}" FontSize="Subtitle"  FontFamily="{x:DynamicResource Bold}"/>
+    </StackLayout>
+</ContentPage>

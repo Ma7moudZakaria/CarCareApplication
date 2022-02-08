@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:VM="clr-namespace:CarCareApplication.ViewModels.Orders" 
+             xmlns:models="clr-namespace:CarCareApplication.Models"
+             Shell.NavBarIsVisible="False"
+             xmlns:resource="clr-namespace:CarCareApplication.Resources" 
+             xmlns:icons="clr-namespace:CarCareApplication.Resources.Fonts"              
+             FlowDirection="{x:Static Device.FlowDirection}"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit" 
+             xmlns:transactionmodels="clr-namespace:CarCareApplication.Core.Shared.ViewModels.TransactionModels;assembly=CarCareApplication.Core.Shared" xmlns:Converter="clr-namespace:CarCareApplication.Converters"
+             BackgroundColor="{x:DynamicResource BackgroundColor}"
+             x:Class="CarCareApplication.Views.Orders.AdminOrderPage">
+
+    <ContentPage.BindingContext>
+        <VM:AdminOrderViewModel x:Name="AdminOrderViewModel"/>
+    </ContentPage.BindingContext>
+    <ContentPage.Behaviors>
+        <xct:EventToCommandBehavior EventName="Appearing" Command="{x:Binding LoadCommand}" />
+    </ContentPage.Behaviors>
+    <ContentPage.Resources>
+        <Converter:DriverDisableRemoveConverter x:Key="DriverDisableRemoveConverter"/>
+    </ContentPage.Resources>
+    <Grid>
+        <CollectionView ItemsSource="{x:Binding AdminOrderGroups}" Margin="9" IsGrouped="True" SelectionMode="Single" SelectionChangedCommand="{x:Binding OrderSelectionChanged}" SelectedItem="{x:Binding SelectedOrder}">
+            <CollectionView.EmptyView>
+                <ContentView>
+                    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                        <!--  Display the svg illustration image  -->
+                        <Image  VerticalOptions="Center" >
+                            <Image.Source>
+                                <FontImageSource Glyph="{x:Static icons:IconFont.Car}" FontFamily="Matrial" Size="Header" Color="Black"/>
+                            </Image.Source>
+                        </Image>
+                        <!--  Label to display header  -->
+                        <Label   FontSize="20" HorizontalTextAlignment="Center"  HorizontalOptions="Center"  FontFamily="{x:DynamicResource Bold}" Text="{x:Static resource:Language.NoOrders}" VerticalTextAlignment="Center" />
+                    </StackLayout>
+                </ContentView>
+            </CollectionView.EmptyView>
+            <CollectionView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <Label Text="{x:Binding Header}"  Margin="9,0" FontFamily="{x:DynamicResource Black}"/>
+                </DataTemplate>
+            </CollectionView.GroupHeaderTemplate>
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="6" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="transactionmodels:IndexTransactionViewModel">
+                    <SwipeView>
+                        <SwipeView.LeftItems>
+                            <SwipeItems Mode="Reveal">
+                                <SwipeItem Text="{x:Static resource:Language.Remove}"
+                                   IsEnabled="{x:Binding Id,Mode=OneWay,Converter={x:StaticResource DriverDisableRemoveConverter}}"
+                                   BackgroundColor="Transparent"
+                                   Command="{x:Binding RemoveCommand,Source={x:Reference Name=AdminOrderViewModel}}" CommandParameter="{x:Binding Id}">
+                                    <SwipeItem.IconImageSource>
+                                        <FontImageSource Glyph="{x:Static icons:IconFont.Delete}" FontFamily="Matrial" Color="Black"/>
+                                    </SwipeItem.IconImageSource>
+                                </SwipeItem>
+                            </SwipeItems>
+                        </SwipeView.LeftItems>
+                        <SwipeView.RightItems>
+                            <SwipeItems Mode="Reveal">
+                                <SwipeItem Text="{x:Static resource:Language.Done}"
+                                   BackgroundColor="Transparent"
+                                   Command="{x:Binding DoneCommand,Source={x:Reference Name=AdminOrderViewModel}}" CommandParameter="{x:Binding Id}">
+                                    <SwipeItem.IconImageSource>
+                                        <FontImageSource Glyph="{x:Static icons:IconFont.Check}" FontFamily="Matrial" Color="Black"/>
+                                    </SwipeItem.IconImageSource>
+                                </SwipeItem>
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+                        <Frame BackgroundColor="White">
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                                    <Label Text="{x:Static resource:Language.CarType}"  FontFamily="{x:DynamicResource SemiBold}" TextColor="Black"/>
+                                    <Label Text="{x:Binding CarType}"  FontFamily="{x:DynamicResource Light}" TextColor="Black"/>
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                                    <Label Text="{x:Static resource:Language.ServerType}"  FontFamily="{x:DynamicResource SemiBold}" TextColor="Black"/>
+                                    <Label Text="{x:Binding ServiceType}"  FontFamily="{x:DynamicResource Light}" TextColor="Black"/>
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                                    <Label Text="{x:Static resource:Language.KilometersAway}"  FontFamily="{x:DynamicResource SemiBold}" TextColor="Black"/>
+                                    <Label Text="{x:Binding KilometersAway}"  FontFamily="{x:DynamicResource Light}" TextColor="Black"/>
+                                    <Label Text="{x:Static resource:Language.Km}"  FontFamily="{x:DynamicResource Light}" TextColor="Black"/>
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                                    <Label Text="{x:Static resource:Language.BasePrice}"  FontFamily="{x:DynamicResource SemiBold}" TextColor="Black"/>
+                                    <Label Text="{x:Binding BasePrice}"  FontFamily="{x:DynamicResource Light}" TextColor="Black"/>
+                                    <Label Text="{x:Static resource:Language.Currency}"  FontFamily="{x:DynamicResource Light}" TextColor="Black"/>
+                                </StackLayout>
+
+
+                                <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                                    <Label Text="{x:Static resource:Language.RequestTime}"  FontFamily="{x:DynamicResource SemiBold}" TextColor="Black"/>
+                                    <Label Text="{x:Binding ServiceTime}" FontFamily="{x:DynamicResource Black}" TextColor="{x:DynamicResource Primary}"/>
+                                </StackLayout>
+                                
+                            </StackLayout>
+                        </Frame>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <ActivityIndicator IsRunning="{x:Binding IsRunning}" 
+                                   Color="#fca41c" 
+                                   HorizontalOptions="FillAndExpand" 
+                                   VerticalOptions="EndAndExpand"/>
+    </Grid>
+</ContentPage>

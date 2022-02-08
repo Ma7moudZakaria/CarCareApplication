@@ -1,0 +1,61 @@
+﻿@page "/ExtraPriceSetting/Add"
+
+@inject IStringLocalizer<AddComponent> Loc
+
+@attribute [Authorize(Roles = "Admin")]
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header bg-info">
+                <h4 class="m-b-0 text-white">@Loc["AddExtraPriceSetting"]</h4>
+            </div>
+            <div class="card-body">
+                <EditForm Model="ViewModel" OnValidSubmit="OnValidSubmit">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
+                    <div class="form-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">@Loc["CarType"]</label>
+
+                                    <InputSelect @bind-Value="CarTypeId" class="custom-select">
+                                        @foreach (var item in CarTypes)
+                                        {
+                                            <option value="@item.Id">@item.Name</option>
+                                        }
+                                    </InputSelect>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">@Loc["Service"]</label>
+
+                                    <InputSelect @bind-Value="ServiceId" class="custom-select">
+                                        @foreach (var item in Services)
+                                        {
+                                            <option value="@item.Id">@item.Name</option>
+                                        }
+                                    </InputSelect>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">@Loc["ExtraPrice"]</label>
+                                    <InputNumber class="form-control" @bind-Value="ViewModel.ExtraPrice" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-info"> <i class="fa fa-check"></i> @Loc["Save"] </button>
+                            <button type="button" class="btn btn-dark"> @Loc["Cancel"] </button>
+                        </div>
+                    </div>
+                </EditForm>
+            </div>
+        </div>
+    </div>
+</div>

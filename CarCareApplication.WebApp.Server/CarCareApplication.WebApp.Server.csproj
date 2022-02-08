@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+		<UserSecretsId>cafe46c9-b1a4-49e5-9545-58568ba9e950</UserSecretsId>
+		<PackageId>CarCareApplication.WebApp.Server</PackageId>
+		<Product>CarCareApplication</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="FluentScheduler" Version="5.5.1" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.5" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="5.0.5" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\CarCareApplication.Core.Shared\CarCareApplication.Core.Shared.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="wwwroot\Images\" />
+		<Folder Include="wwwroot\Images\" />
+	</ItemGroup>
+
+</Project>

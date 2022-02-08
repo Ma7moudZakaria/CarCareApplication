@@ -1,0 +1,671 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutUs" xml:space="preserve">
+    <value>معلومات عنا</value>
+  </data>
+  <data name="Account" xml:space="preserve">
+    <value>بياناتي </value>
+  </data>
+  <data name="AD-X0001" xml:space="preserve">
+    <value>الرقم التسلسلي غير صحيح</value>
+  </data>
+  <data name="AD-X0002" xml:space="preserve">
+    <value>حدث خطأ ما اثناء تنفيذ الامر , الرجاء المحاوله مره اخري</value>
+  </data>
+  <data name="AD-X0003" xml:space="preserve">
+    <value>العنوان لا يمكن ان يكون فارغ , الرجاء التأكد من المدخلات</value>
+  </data>
+  <data name="AD-X0004" xml:space="preserve">
+    <value>الرقم التسلسلي للمستخدم غير موجود</value>
+  </data>
+  <data name="AD-X0005" xml:space="preserve">
+    <value>رقم الهاتف المحمول لا يمكن ان يكون فارغاَ</value>
+  </data>
+  <data name="AD-X0006" xml:space="preserve">
+    <value> الاسم لا يمكن ان يكون فارغاَ</value>
+  </data>
+  <data name="AD-X0007" xml:space="preserve">
+    <value>العنوان لا يمكن ان يكون فارغاَ</value>
+  </data>
+  <data name="AD-X0008" xml:space="preserve">
+    <value>لم نتمكن من حساب الكيلومترات , الرجاء التحقق من تفعيل إعدادات الموقع</value>
+  </data>
+  <data name="AD-X0009" xml:space="preserve">
+    <value>لم نتمكن من تحديد موقعك الحالي , الرجاء التحقق من تفعيل إعدادات الموقع</value>
+  </data>
+  <data name="AD-X0010" xml:space="preserve">
+    <value>العنوان غير موجود</value>
+  </data>
+  <data name="AddAddress" xml:space="preserve">
+    <value>إضافه عنوان</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>العنوان</value>
+  </data>
+  <data name="AppDescription" xml:space="preserve">
+    <value>هذا البرنامج يقدم خدمة تنظيف السيارات عبر شركة فور كاركير</value>
+  </data>
+  <data name="AppHomeText" xml:space="preserve">
+    <value>كاركير يسعدها تقديم جميع خدمات التنظيف المتكاملة بأحدث وسائل التنظيف والمعدات وباقل التكاليف عبر سياراتنا المتنقلة</value>
+  </data>
+  <data name="AppLanguage" xml:space="preserve">
+    <value>اللغة</value>
+  </data>
+  <data name="AppName" xml:space="preserve">
+    <value>كاركير</value>
+  </data>
+  <data name="Arabic" xml:space="preserve">
+    <value>اللغة العربية</value>
+  </data>
+  <data name="BasePrice" xml:space="preserve">
+    <value>السعر الأساسي</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="CarType" xml:space="preserve">
+    <value>نوع العربية</value>
+  </data>
+  <data name="ChemicalWashing" xml:space="preserve">
+    <value>غسيل كيماوي داخلي شامل</value>
+  </data>
+  <data name="ChemicalWashingDes" xml:space="preserve">
+    <value>•غسيل سقف وابواب وكراسي وتابلو وقوائم مع شفط الأتربة في الأرضية بمكنسة وغسل الدواسات – ملمع للتابلو – معطر – دواسات ورقية – تنظيف الزجاج .
+•إمكانية غسيل الشنطة كيماوي ب 50 جنيه.
+•غسيل الأرضية كيماوي بيتم اضافه 60 جنية بدون فك كراسي</value>
+  </data>
+  <data name="ClientMessage" xml:space="preserve">
+    <value>لا يمكن الحذف</value>
+  </data>
+  <data name="ContactUs" xml:space="preserve">
+    <value>تواصل معانا</value>
+  </data>
+  <data name="CT-X0001" xml:space="preserve">
+    <value>الرقم التسلسلي غير صحيح</value>
+  </data>
+  <data name="CT-X0002" xml:space="preserve">
+    <value>حدث خطأ ما اثناء تنفيذ الامر , الرجاء المحاوله مره اخري</value>
+  </data>
+  <data name="CT-X0003" xml:space="preserve">
+    <value>العنوان لا يمكن ان يكون فارغاَ</value>
+  </data>
+  <data name="CT-X0004" xml:space="preserve">
+    <value>نوع السياره غير موجود</value>
+  </data>
+  <data name="CT-X0005" xml:space="preserve">
+    <value>لا يمكن إنشاء نوع سياره ببيانات فارغه , الرجاء التأكد من المدخلات</value>
+  </data>
+  <data name="CT-X0006" xml:space="preserve">
+    <value>يتواجد نوع سياره بنفس الاسم مسبقاَ</value>
+  </data>
+  <data name="CT-X0007" xml:space="preserve">
+    <value>الاسم باللغه العربية لا يمكن ان يكون فارغاَ</value>
+  </data>
+  <data name="CT-X0008" xml:space="preserve">
+    <value>الاسم باللغه الانجليزية لا يمكن ان يكون فارغاَ</value>
+  </data>
+  <data name="CT-X0009" xml:space="preserve">
+    <value>الوصف باللغه العربية لا يمكن ان يكون فارغاَ</value>
+  </data>
+  <data name="CT-X0010" xml:space="preserve">
+    <value>الوصف باللغه الانجليزية لا يمكن ان يكون فارغاَ</value>
+  </data>
+  <data name="CT-X0011" xml:space="preserve">
+    <value>لا يمكن تعديل نوع سياره ببيانات فارغه , الرجاء التأكد من المدخلات</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>ج.م</value>
+  </data>
+  <data name="DeliveryPrice" xml:space="preserve">
+    <value>سعر الوصول</value>
+  </data>
+  <data name="DialUp" xml:space="preserve">
+    <value>إتصل بنا</value>
+  </data>
+  <data name="DistanceError" xml:space="preserve">
+    <value>نحن لا ندعم المسافات البعيده , الرجاء التواصل مع الإداره للتفاصيل </value>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>تم </value>
+  </data>
+  <data name="DoneError" xml:space="preserve">
+    <value>فشل عملية تنفيذ الطلب</value>
+  </data>
+  <data name="DY-X0001" xml:space="preserve">
+    <value>الرقم التسلسلي غير صحيح</value>
+  </data>
+  <data name="DY-X0002" xml:space="preserve">
+    <value>حدث خطأ ما اثناء تنفيذ الامر , الرجاء المحاوله مره اخري</value>
+  </data>
+  <data name="DY-X0003" xml:space="preserve">
+    <value>العنوان لا يمكن ان يكون فارغاَ</value>
+  </data>
+  <data name="DY-X0004" xml:space="preserve">
+    <value>لا يمكن إنشاء يوم ببيانات فارغه , الرجاء التأكد من المدخلات</value>
+  </data>
+  <data name="DY-X0005" xml:space="preserve">
+    <value>اسم اليوم باللغه العربية لا يمكن ان يكون فارغاَ</value>
+  </data>
+  <data name="DY-X0006" xml:space="preserve">
+    <value>اسم اليوم باللغه الإنجليزية لا يمكن ان يكون فارغاَ</value>
+  </data>
+  <data name="DY-X0007" xml:space="preserve">
+    <value>يتواجد اسم يوم بنفس الاسم مسبقاَ</value>
+  </data>
+  <data name="DY-X0008" xml:space="preserve">
+    <value>لا يمكن تعديل يوم ببيانات فارغه , الرجاء التأكد من المدخلات</value>
+  </data>
+  <data name="DY-X0009" xml:space="preserve">
+    <value>اليوم غير موجود</value>
+  </data>
+  <data name="EngineWashing" xml:space="preserve">
+    <value>غسيل الماتور بالكيماوي</value>
+  </data>
+  <data name="EngineWashingDes" xml:space="preserve">
+    <value>يتم غسيل الماتور بفوم مخصص لتنظيف الزيوت والشحوم  وفوط ميكروفايبر فقط</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>اللغة الإنجليزية </value>
+  </data>
+  <data name="EPS-X0001" xml:space="preserve">
+    <value>الرقم التسلسلي غير صحيح</value>
+  </data>
+  <data name="EPS-X0002" xml:space="preserve">
+    <value>حدث خطأ ما اثناء تنفيذ الامر , الرجاء المحاوله مره اخري</value>
+  </data>
+  <data name="EPS-X0003" xml:space="preserve">
+    <value>العنوان لا يمكن ان يكون فارغاَ</value>
+  </data>
+  <data name="EPS-X0004" xml:space="preserve">
+    <value>إعدادات السعر الإضافي غير موجوده</value>
+  </data>
+  <data name="EPS-X0005" xml:space="preserve">
+    <value>لا يمكن إنشاء إعدادات سعر إضافية ببيانات فارغه , الرجاء التأكد من المدخلات</value>
+  </data>
+  <data name="EPS-X0006" xml:space="preserve">
+    <value>نوع السياره لم يتم إختياره</value>
+  </data>
+  <data name="EPS-X0007" xml:space="preserve">
+    <value>الخدمه لم يتم إختيارها</value>
+  </data>
+  <data name="EPS-X0008" xml:space="preserve">
+    <value>السعر الإضافي لا يمكن ان يكون اقل من او يساوي صفر </value>
+  </data>
+  <data name="EPS-X0009" xml:space="preserve">
+    <value>لا يمكن تعديل إعدادات سعر إضافية ببيانات فارغه , الرجاء التأكد من المدخلات</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>خطأ</value>
+  </data>
+  <data name="EX-X0001" xml:space="preserve">
+    <value>حدث خطأ ما اثناء تنفيذ الامر , الرجاء المحاوله مره اخري</value>
+  </data>
+  <data name="EX-X0002" xml:space="preserve">
+    <value>لا يمكن إنشاء نفقات ببيانات فارغه , الرجاء التأكد من المدخلات</value>
+  </data>
+  <data name="EX-X0003" xml:space="preserve">
+    <value>العنوان لا يمكن ان يكون فارغاَ</value>
+  </data>
+  <data name="EX-X0004" xml:space="preserve">
+    <value>الكاش لا يمكن ان يكون اقل من او يساوي صفر</value>
+  </data>
+  <data name="ExtraCharge" xml:space="preserve">
+    <value>رسوم إضافية</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>الاسم الاول *</value>
+  </data>
+  <data name="FullAddress" xml:space="preserve">
+    <value>العنوان تفصيلياَ *</value>
+  </data>
+  <data name="GoBackHome" xml:space="preserve">
+    <value>أذهب للرئيسية</value>
+  </data>
+  <data name="GoTo" xml:space="preserve">
+    <value>الذهاب الى</value>
+  </data>
+  <data name="GPSDeciveError" xml:space="preserve">
+    <value>يرجي تفعيل خاصيه تحديد المواقع علي هاتفك</value>
+  </data>
+  <data name="GPSLocationError" xml:space="preserve">
+    <value>هاتفك لا يدعم خاصيه تحديد المواقع </value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>الرئيسية</value>
+  </data>
+  <data name="HOW-X0001" xml:space="preserve">
+    <value>الرقم التسلسلي غير صحيح</value>
+  </data>
+  <data name="HOW-X0002" xml:space="preserve">
+    <value>ساعات العمل غير موجوده</value>
+  </data>
+  <data name="HOW-X0003" xml:space="preserve">
+    <value>حدث خطأ ما اثناء تنفيذ الامر , الرجاء المحاوله مره اخري</value>
+  </data>
+  <data name="HOW-X0004" xml:space="preserve">
+    <value>العنوان لا يمكن ان يكون فارغاَ</value>
+  </data>
+  <data name="HOW-X0005" xml:space="preserve">
+    <value>الخدمه غير متوفره</value>
+  </data>
+  <data name="HR-X0001" xml:space="preserve">
+    <value>الرقم التسلسلي غير صحيح</value>
+  </data>
+  <data name="HR-X0002" xml:space="preserve">
+    <value>الساعه غير موجوده</value>
+  </data>
+  <data name="HR-X0003" xml:space="preserve">
+    <value>حدث خطأ ما اثناء تنفيذ الامر , الرجاء المحاوله مره اخري</value>
+  </data>
+  <data name="HR-X0004" xml:space="preserve">
+    <value>العنوان لا يمكن ان يكون فارغاَ</value>
+  </data>
+  <data name="KilometersAway" xml:space="preserve">
+    <value>بعد المكان</value>
+  </data>
+  <data name="Km" xml:space="preserve">
+    <value>ك.م</value>
+  </data>
+  <data name="LocationError" xml:space="preserve">
+    <value>تعذر إمكانيه تحديد الموقع </value>
+  </data>
+  <data name="LocationPermissionError" xml:space="preserve">
+    <value>يرجي تفعيل خاصية الموقع في ضبط البرنامج</value>
+  </data>
+  <data name="LocationType" xml:space="preserve">
+    <value>نوع العنوان *</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>تسجيل الدخول</value>
+  </data>
+  <data name="LoginRequired" xml:space="preserve">
+    <value>سجل دخولك او قم بإنشاء حساب جديد</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>تسجيل الخروج </value>
+  </data>
+  <data name="MakeAnAppointment" xml:space="preserve">
+    <value>تحديد موعد </value>
+  </data>
+  <data name="MakeOrderError" xml:space="preserve">
+    <value>تعذر عملية إتمام الطلب , الرجاء المحاوله لاحقاَ وفي حاله إستمرار المشكله الرجاء التواصل مع الإدراة</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>اسم الشخص *</value>
+  </data>
+  <data name="NavigateTo" xml:space="preserve">
+    <value>توجه إلى هذه المكان</value>
+  </data>
+  <data name="NoAddresses" xml:space="preserve">
+    <value>لا يوجد عناوين مسجلة</value>
+  </data>
+  <data name="NoOrders" xml:space="preserve">
+    <value>لا يوجد طلبات </value>
+  </data>
+  <data name="NormalWashing" xml:space="preserve">
+    <value>الغسيل العادي</value>
+  </data>
+  <data name="NormalWashingDes" xml:space="preserve">
+    <value>شفط أتربه - التابلو - قوائم - أبواب - كراسي - أرضيات - غسيل دواسات -  زجاج   - ملمع  للتابلو - معطر- دواسات ورقية</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>موافق</value>
+  </data>
+  <data name="OrderDetails" xml:space="preserve">
+    <value>تفاصيل الطلب </value>
+  </data>
+  <data name="OrderPlaced" xml:space="preserve">
+    <value>تم تنفيذ الطلب</value>
+  </data>
+  <data name="Orders" xml:space="preserve">
+    <value>طلباتي</value>
+  </data>
+  <data name="OutsideWashingNormal" xml:space="preserve">
+    <value>الغسيل الخارجي الجاف</value>
+  </data>
+  <data name="OutsideWashingNormalDes" xml:space="preserve">
+    <value>غسيل خارجي كامل و  تنظيف وتلميع جنوط + بالإضافة الى طبقه واكس خارجي تعطي حماية ولمعان</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>كلمة السر *</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>رقم الهاتف*</value>
+  </data>
+  <data name="PickLanguage" xml:space="preserve">
+    <value>اللغة الرئيسية للبرنامج</value>
+  </data>
+  <data name="PlaceOrder" xml:space="preserve">
+    <value>تنفيذ الطلب</value>
+  </data>
+  <data name="PoweredBy" xml:space="preserve">
+    <value>مدعم من </value>
+  </data>
+  <data name="RE-X0001" xml:space="preserve">
+    <value>حدث خطأ ما اثناء تنفيذ الامر , الرجاء المحاوله مره اخري</value>
+  </data>
+  <data name="RE-X0002" xml:space="preserve">
+    <value>لا يمكن إنشاء إيرادات ببيانات فارغه , الرجاء التأكد من المدخلات</value>
+  </data>
+  <data name="RE-X0003" xml:space="preserve">
+    <value>العنوان لا يمكن ان يكون فارغاَ</value>
+  </data>
+  <data name="RE-X0004" xml:space="preserve">
+    <value>الكاش لا يمكن ان يكون اقل من او يساوي صفر</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="RemoveError" xml:space="preserve">
+    <value>لا يمكن حذف الطلب , الرجاء المحاوله لاحقاَ</value>
+  </data>
+  <data name="RequestLocation" xml:space="preserve">
+    <value>مكان الطلب</value>
+  </data>
+  <data name="RequestPersonName" xml:space="preserve">
+    <value>الإسم</value>
+  </data>
+  <data name="RequestPhoneNumber" xml:space="preserve">
+    <value>الهاتف</value>
+  </data>
+  <data name="RequestTime" xml:space="preserve">
+    <value>وقت الطلب</value>
+  </data>
+  <data name="RestartRequired" xml:space="preserve">
+    <value>يجب إعاده تشغيل البرنامج لكي تطبق اللغة بالكامل</value>
+  </data>
+  <data name="SE-X0001" xml:space="preserve">
+    <value>الرقم التسلسلي غير صحيح</value>
+  </data>
+  <data name="SE-X0002" xml:space="preserve">
+    <value>الخدمه لا يمكن ان تكون فارغه</value>
+  </data>
+  <data name="SE-X0003" xml:space="preserve">
+    <value>حدث خطأ ما اثناء تنفيذ الامر , الرجاء المحاوله مره اخري</value>
+  </data>
+  <data name="SE-X0004" xml:space="preserve">
+    <value>العنوان لا يمكن ان يكون فارغاَ</value>
+  </data>
+  <data name="SE-X0005" xml:space="preserve">
+    <value>نوع السياره لم يتم إختياره </value>
+  </data>
+  <data name="SE-X0006" xml:space="preserve">
+    <value>نوع السياره غير موجود</value>
+  </data>
+  <data name="SE-X0007" xml:space="preserve">
+    <value>لا يمكن إنشاء خدمه ببيانات فارغه , الرجاء التأكد من المدخلات</value>
+  </data>
+  <data name="SE-X0008" xml:space="preserve">
+    <value>السعر الاساسي لا يمكن ان يكون اقل من او يساوي صفر</value>
+  </data>
+  <data name="SE-X0009" xml:space="preserve">
+    <value>الاسم باللغه العربية لا يمكن ان يكون فارغاَ</value>
+  </data>
+  <data name="SE-X0010" xml:space="preserve">
+    <value>الاسم باللغه الانجليزية لا يمكن ان يكون فارغاَ</value>
+  </data>
+  <data name="SE-X0011" xml:space="preserve">
+    <value>يتواجد خدمه بنفس الاسم مسبقاَ</value>
+  </data>
+  <data name="SE-X0012" xml:space="preserve">
+    <value>لا يمكن تعديل خدمه ببيانات فارغه , الرجاء التأكد من المدخلات</value>
+  </data>
+  <data name="SE-X0013" xml:space="preserve">
+    <value>الوصف باللغة العربية لا يمكن ان يكون فارغاً</value>
+  </data>
+  <data name="SE-X0014" xml:space="preserve">
+    <value>الوصف باللغة الإنجليزية لا يمكن ان يكون فارغاً</value>
+  </data>
+  <data name="SecondName" xml:space="preserve">
+    <value>الاسم الثاني *</value>
+  </data>
+  <data name="SelectLanguage" xml:space="preserve">
+    <value>أختار اللغة</value>
+  </data>
+  <data name="ServerType" xml:space="preserve">
+    <value>نوع الخدمة</value>
+  </data>
+  <data name="Service" xml:space="preserve">
+    <value>الخدمة </value>
+  </data>
+  <data name="ServiceDescription" xml:space="preserve">
+    <value>وصف الخدمات</value>
+  </data>
+  <data name="SET-X0001" xml:space="preserve">
+    <value>الرقم التسلسلي غير صحيح</value>
+  </data>
+  <data name="SET-X0002" xml:space="preserve">
+    <value>الإعدادات غير موجوده</value>
+  </data>
+  <data name="SET-X0003" xml:space="preserve">
+    <value>حدث خطأ ما اثناء تنفيذ الامر , الرجاء المحاوله مره اخري</value>
+  </data>
+  <data name="SET-X0004" xml:space="preserve">
+    <value>العنوان لا يمكن ان يكون فارغاَ</value>
+  </data>
+  <data name="SET-X0005" xml:space="preserve">
+    <value>لا يمكن إنشاء إعدادات ببيانات فارغه , الرجاء التأكد من المدخلات</value>
+  </data>
+  <data name="SET-X0006" xml:space="preserve">
+    <value>نوع الخدمه لم يتم إختياره</value>
+  </data>
+  <data name="SET-X0007" xml:space="preserve">
+    <value>نوع السياره لم يتم إختياره</value>
+  </data>
+  <data name="SET-X0008" xml:space="preserve">
+    <value>اقصي عدد من الكيلومترات لا يمكن ان يكون اقل من او يساوي صفر</value>
+  </data>
+  <data name="SET-X0009" xml:space="preserve">
+    <value>اقل عدد من الكيلومترات لا يمكن ان يكون اقل من او يساوي صفر</value>
+  </data>
+  <data name="SET-X0010" xml:space="preserve">
+    <value>اقل عدد من الكيلومترات لا يمكن ان يساوي اقصي عدد من الكيلومترات</value>
+  </data>
+  <data name="SET-X0011" xml:space="preserve">
+    <value>اقل عدد من الكيلومترات لا يمكن ان يكون اكبر من اقصي عدد من الكيلومترات</value>
+  </data>
+  <data name="SET-X0012" xml:space="preserve">
+    <value>معدل الكيلومترات لا يمكن ان يكون اقل من او يساوي صفر </value>
+  </data>
+  <data name="SET-X0013" xml:space="preserve">
+    <value>نحن نعتذر , العنوان المختار خارج حدود دعمنا للخدمه المختارة , الرجاء تغيير العنوان او إختيار نوع خدمه اخر</value>
+  </data>
+  <data name="SET-X0014" xml:space="preserve">
+    <value>إعداد بنفس الخدمة و نوع العربية موجود مسبقاً</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>الإعدادات </value>
+  </data>
+  <data name="SigninError" xml:space="preserve">
+    <value>رقم الهاتف او كلمة المرور غير صحيحة</value>
+  </data>
+  <data name="Signup" xml:space="preserve">
+    <value>تسجيل حساب جديد</value>
+  </data>
+  <data name="SignupError" xml:space="preserve">
+    <value>لم نستطيع إنشاء حساب لك بالبيانات المدخله؛ رجاءً تحقق من صحة البيانات او عدم تكرراها مع بيانات مدخله مسبقاً</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>الحالة</value>
+  </data>
+  <data name="ThankYou" xml:space="preserve">
+    <value>شكراَ لك </value>
+  </data>
+  <data name="TR-X0001" xml:space="preserve">
+    <value>الرقم التسلسلي غير صحيح</value>
+  </data>
+  <data name="TR-X0002" xml:space="preserve">
+    <value>الإعدادات غير متوفره</value>
+  </data>
+  <data name="TR-X0003" xml:space="preserve">
+    <value>حدث خطأ ما اثناء تنفيذ الامر , الرجاء المحاوله مره اخري</value>
+  </data>
+  <data name="TR-X0004" xml:space="preserve">
+    <value>لا يمكن إنشاء طلب ببيانات فارغه , الرجاء التأكد من المدخلات</value>
+  </data>
+  <data name="TR-X0005" xml:space="preserve">
+    <value>الخدمه غير متوفره</value>
+  </data>
+  <data name="TR-X0006" xml:space="preserve">
+    <value>نوع السياره غير متوفره</value>
+  </data>
+  <data name="TR-X0007" xml:space="preserve">
+    <value>ساعات العمل غير متوفره</value>
+  </data>
+  <data name="TR-X0008" xml:space="preserve">
+    <value>الطلب غير موجود</value>
+  </data>
+  <data name="UR-X0001" xml:space="preserve">
+    <value>لا يمكن تسجيل الدخول ببيانات فارغه</value>
+  </data>
+  <data name="UR-X0002" xml:space="preserve">
+    <value>كلمة السر لا يمكن ان تكون فارغه</value>
+  </data>
+  <data name="UR-X0003" xml:space="preserve">
+    <value>رقم الهاتف لا يمكن ان يكون فارغأ</value>
+  </data>
+  <data name="UR-X0004" xml:space="preserve">
+    <value>رقم الهاتف او كلمة السر غير صحيحين , الرجاء تسجيل حساب جديد او إعاده تسجيل الدخول مره اخري</value>
+  </data>
+  <data name="UR-X0005" xml:space="preserve">
+    <value>حدث خطأ ما اثناء تنفيذ الامر , الرجاء المحاوله مره اخري</value>
+  </data>
+  <data name="UR-X0006" xml:space="preserve">
+    <value>الاسم الاول لا يمكن ان يكون فارغأ</value>
+  </data>
+  <data name="UR-X0007" xml:space="preserve">
+    <value>الاسم الثاني لا يمكن ان يكون فارغأ</value>
+  </data>
+  <data name="UR-X0008" xml:space="preserve">
+    <value>رقم الهاتف موجود مسبقاَ , الرجاء تسجيل الدخول</value>
+  </data>
+  <data name="UR-X0009" xml:space="preserve">
+    <value>لا يمكن تسجيل حساب جديد ببيانات فارغه</value>
+  </data>
+  <data name="UR-X0010" xml:space="preserve">
+    <value>لا يمكن ان يكون صلاحية المستخدم فارغة</value>
+  </data>
+  <data name="Vehicle" xml:space="preserve">
+    <value>عربية</value>
+  </data>
+  <data name="WhatsApp" xml:space="preserve">
+    <value>واتساب</value>
+  </data>
+</root>

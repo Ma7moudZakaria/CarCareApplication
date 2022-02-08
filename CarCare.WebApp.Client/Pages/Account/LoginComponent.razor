@@ -1,0 +1,41 @@
+﻿@page "/Account/Login"
+@inject IStringLocalizer<LoginComponent> Loc
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header bg-info">
+                <h4 class="m-b-0 text-white">@Loc["Login"]</h4>
+            </div>
+            <div class="card-body">
+                <EditForm Model="ViewModel" OnValidSubmit="OnValidSubmitAsync">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
+                    <div class="form-body">
+                        <div class="row">
+                            <div class="col-md-12 mb-4">
+                                <div class="form-group">
+                                    <label class="control-label">@Loc["PhoneNumber"]</label>
+                                    <InputText class="form-control" placeholder="@Loc["PhoneNumber"]" @bind-Value="ViewModel.PhoneNumber" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mb-4">
+                                <div class="form-group">
+                                    <label class="control-label">@Loc["Password"]</label>
+                                    <InputText type="password" class="form-control" placeholder="@Loc["Password"]" @bind-Value="ViewModel.Password" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-info"> <i class="fa fa-check"></i> @Loc["Login"] </button>
+                            <button type="reset" class="btn btn-dark">@Loc["Cancel"]</button>
+                        </div>
+                    </div>
+                </EditForm>
+            </div>
+        </div>
+    </div>
+</div>

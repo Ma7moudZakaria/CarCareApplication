@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:loc="clr-namespace:CarCareApplication.Resources" 
+             xmlns:font="clr-namespace:CarCareApplication.Resources.Fonts" 
+             xmlns:VM="clr-namespace:CarCareApplication.ViewModels.Account"
+             FlowDirection="{x:Static Device.FlowDirection}"
+             BackgroundColor="{x:DynamicResource BackgroundColor}"
+             Shell.BackgroundColor="{DynamicResource BackgroundColor}"
+             Shell.ForegroundColor="Black"
+             Shell.NavBarIsVisible="True"
+             Shell.NavBarHasShadow="False"
+             x:Class="CarCareApplication.Views.Accounts.LanguagePage">
+    <ContentPage.BindingContext>
+        <VM:LanguagePageViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <StackLayout  Padding="16,0" Spacing="0" VerticalOptions="FillAndExpand">
+
+        <StackLayout  VerticalOptions="CenterAndExpand" Spacing="15">
+
+            <!--  Label to display the title of this page  -->
+
+            <Image Source="Logo.png" HeightRequest="100" WidthRequest="100" VerticalOptions="Center"/>
+
+            <Label Text="{x:Static loc:Language.PickLanguage}" Style="{x:DynamicResource SemiBoldText}"  HorizontalOptions="Center" />
+
+            <BoxView Style="{x:DynamicResource Separator}"/>
+
+            <StackLayout Orientation="Horizontal">
+                <Frame  Grid.Column="0"
+                    Grid.Row="2"
+                    Margin="2"
+                    Padding="0"
+                    HorizontalOptions="FillAndExpand"
+                    BackgroundColor="White"
+                    BorderColor="White"
+                    CornerRadius="4"
+                    VerticalOptions="StartAndExpand"
+                    HasShadow="true">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer  NumberOfTapsRequired="1" Command="{x:Binding LangageLanguageCommnad}" CommandParameter="ar-EG"/>
+                    </Frame.GestureRecognizers>
+                    <StackLayout Padding="15">
+                        <Image Source="{FontImage FontFamily={x:StaticResource Matrial}, Glyph={x:Static font:IconFont.AbjadArabic},Color=Black,Size=Title}" HorizontalOptions="FillAndExpand" />
+                        <Label Text="{x:Static loc:Language.Arabic}"  Style="{x:DynamicResource SemiBoldText}" TextColor="Black" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </Frame>
+                <Frame  Grid.Column="1"
+                    Grid.Row="2"
+                    Margin="2"
+                    Padding="0"
+                    BackgroundColor="White"
+                    BorderColor="White"
+                    HorizontalOptions="FillAndExpand"
+                    CornerRadius="4"
+                    VerticalOptions="StartAndExpand"
+                    HasShadow="true">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Command="{x:Binding LangageLanguageCommnad}" CommandParameter="en-US" />
+                    </Frame.GestureRecognizers>
+                    <StackLayout Padding="15">
+                        <Image Source="{FontImage FontFamily={x:StaticResource Matrial}, Glyph={x:Static font:IconFont.AlphaE},Color=Black,Size=Title}" HorizontalOptions="FillAndExpand" />
+                        <Label Text="{x:Static loc:Language.English}"  Style="{x:DynamicResource SemiBoldText}" TextColor="Black" HorizontalOptions="Center" />
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+
+        </StackLayout>
+        <StackLayout VerticalOptions="EndAndExpand" Padding="12" HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer x:Name="BitTech" Tapped="BitTech_Tapped" />
+            </StackLayout.GestureRecognizers>
+            <Label Text="{x:Static loc:Language.PoweredBy}" Style="{x:DynamicResource SemiBoldText}" FontSize="Default" VerticalOptions="Center" />
+            <Image Source="bittechs.png" HeightRequest="120" WidthRequest="150" Aspect="AspectFit"/>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>

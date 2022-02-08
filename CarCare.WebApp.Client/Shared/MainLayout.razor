@@ -1,0 +1,19 @@
+﻿@inherits LayoutComponentBase
+
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <div class="main">
+        <div class="top-row px-4">
+            <LanguageSelector />
+        </div>
+
+        <div class="content px-4">
+            @Body
+        </div>
+    </div>
+</div>
+<BlazoredToasts  Position="Blazored.Toast.Configuration.ToastPosition.BottomRight" />

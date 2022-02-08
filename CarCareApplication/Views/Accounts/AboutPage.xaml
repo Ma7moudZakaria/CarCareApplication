@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resource="clr-namespace:CarCareApplication.Resources" 
+             BackgroundColor="{x:DynamicResource BackgroundColor}"
+             FlowDirection="{x:Static Device.FlowDirection}"
+             Shell.NavBarHasShadow="False"
+             x:Class="CarCareApplication.Views.Accounts.AboutPage">
+
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout  Padding="16,0" Spacing="0" VerticalOptions="FillAndExpand">
+
+        <StackLayout  VerticalOptions="CenterAndExpand" Spacing="15">
+
+            <!--  Label to display the title of this page  -->
+
+            <Image Source="logo.png" HeightRequest="100" WidthRequest="100" VerticalOptions="Center"/>
+
+            <Label Text="{x:Static resource:Language.AppName}" Style="{x:DynamicResource SemiBoldText}"  HorizontalOptions="Center" />
+
+            <BoxView Style="{x:DynamicResource Separator}"/>
+
+            <Label Text="{x:Static resource:Language.AppDescription}" Style="{x:DynamicResource ExtraLightText}"  HorizontalOptions="Start"/>
+
+        </StackLayout>
+        <StackLayout VerticalOptions="EndAndExpand" Padding="12" HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer x:Name="BitTech" Tapped="BitTech_Tapped" />
+            </StackLayout.GestureRecognizers>
+            <Label Text="{x:Static resource:Language.PoweredBy}" Style="{x:DynamicResource SemiBoldText}" FontSize="14" VerticalOptions="Center" />
+            <Image Source="BitTechs.png" HeightRequest="120" WidthRequest="200"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

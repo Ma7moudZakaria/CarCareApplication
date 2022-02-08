@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:models="clr-namespace:CarCareApplication.Models" 
+             xmlns:VM="clr-namespace:CarCareApplication.ViewModels.Account" 
+             Shell.NavBarIsVisible="False"
+             FlowDirection="{x:Static Device.FlowDirection}"
+             xmlns:resource="clr-namespace:CarCareApplication.Resources" 
+             BackgroundColor="{x:DynamicResource BackgroundColor}"
+             x:Class="CarCareApplication.Views.Accounts.AccountPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.BindingContext>
+        <VM:AccountViewModel x:Name="AccountViewModel"/>
+    </ContentPage.BindingContext>
+    <CollectionView ItemsSource="{x:Binding AccountItems}" IsGrouped="True" Margin="8">
+        <CollectionView.GroupHeaderTemplate>
+            <DataTemplate x:DataType="models:AccountItemGroup">
+                <StackLayout Padding="6">
+                    <Label Text="{x:Binding Header}" VerticalTextAlignment="Center"  FontSize="Subtitle" FontFamily="{x:DynamicResource Bold}"  LineHeight="{OnPlatform Android=1.25, Default=-1}"/>
+                </StackLayout>
+            </DataTemplate>
+        </CollectionView.GroupHeaderTemplate>
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="models:AccountItem">
+                <StackLayout Padding="6">
+                    <Frame Style="{x:DynamicResource AccountFrame}">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Command="{x:Binding NavigationCommand,Source={x:Reference AccountViewModel}}" CommandParameter="{x:Binding Route}"/>
+                        </Frame.GestureRecognizers>
+                        <StackLayout Orientation="Horizontal">
+                            <Image>
+                                <Image.Source>
+                                    <FontImageSource Glyph="{x:Binding Icon}" FontFamily="Matrial" Color="Black"/>
+                                </Image.Source>
+                            </Image>
+                            <Label Text="{x:Binding Title}" VerticalOptions="Center" FontFamily="{x:DynamicResource Light}"/>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+        <CollectionView.Footer>
+            <StackLayout Padding="6">
+                <StackLayout VerticalOptions="End" Padding="12" HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                    <Label Text="{x:Static resource:Language.PoweredBy}" FontSize="14" VerticalOptions="Center" FontFamily="{x:DynamicResource Light}" TextColor="Black"/>
+                    <Image Source="bittechs.png" HeightRequest="120" WidthRequest="200">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{x:Binding BittechsNavigation}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
+            </StackLayout>
+        </CollectionView.Footer>
+    </CollectionView>
+</ContentPage>

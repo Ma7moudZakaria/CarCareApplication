@@ -1,0 +1,51 @@
+﻿@page "/Expenses/Add"
+
+@inject IStringLocalizer<AddComponent> Loc
+
+@attribute [Authorize(Roles = "Admin")]
+<!-- ============================================================== -->
+<!-- End Bread crumb and right sidebar toggle -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- Start Page Content -->
+<!-- ============================================================== -->
+<!-- Row -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header bg-info">
+                <h4 class="m-b-0 text-white">@Loc["Expenses"]</h4>
+            </div>
+            <div class="card-body">
+                <EditForm Model="ViewModel" OnValidSubmit="OnValidSubmit">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
+                    <div class="form-body">
+                        <div class="row p-t-20">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label" asp-for="ViewModel.Cash">@Loc["Expenses"]</label>
+                                    <InputNumber class="form-control" @bind-Value="ViewModel.Cash" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label asp-for="ViewModel.Description">@Loc["Description"] </label>
+                                    <InputTextArea class="form-control" @bind-Value="ViewModel.Description" />
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-info"> <i class="fa fa-check"></i>@Loc["Save"] </button>
+                            <button type="button" class="btn btn-dark">@Loc["Cancel"]</button>
+                        </div>
+                    </div>
+                </EditForm>
+            </div>
+        </div>
+    </div>
+</div>

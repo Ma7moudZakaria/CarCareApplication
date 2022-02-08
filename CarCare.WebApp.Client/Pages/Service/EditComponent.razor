@@ -1,0 +1,87 @@
+﻿@page "/Service/Edit/{Id:int}"
+
+@inject IStringLocalizer<EditComponent> Loc
+
+@attribute [Authorize(Roles = "Admin")]
+<!-- ============================================================== -->
+<!-- End Bread crumb and right sidebar toggle -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- Start Page Content -->
+<!-- ============================================================== -->
+<!-- Row -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header bg-info">
+                <h4 class="m-b-0 text-white">@Loc["EditService"] </h4>
+            </div>
+            <div class="card-body">
+                <EditForm Model="ViewModel" OnValidSubmit="OnValidSubmitAsync">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
+                    <div class="form-body">
+                        <div class="row p-t-20">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label" asp-for="ViewModel.NameEN">@Loc["EnglishName"]</label>
+                                    <InputText class="form-control" @bind-Value="ViewModel.NameEN" />
+                                </div>
+                            </div>
+                            <!--/span-->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label" asp-for="ViewModel.NameAR">@Loc["ArabicName"]</label>
+                                    <InputText class="form-control" @bind-Value="ViewModel.NameAR" />
+                                </div>
+                            </div>
+                            <!--/span-->
+                        </div>
+                        <div class="row p-t-20">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label" asp-for="ViewModel.NameEN">Description EN</label>
+                                    <InputText class="form-control" @bind-Value="ViewModel.DescriptionEN" />
+                                </div>
+                            </div>
+                            <!--/span-->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label" asp-for="ViewModel.NameAR">Description AR</label>
+                                    <InputText class="form-control" @bind-Value="ViewModel.DescriptionAR" />
+                                </div>
+                            </div>
+                            <!--/span-->
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label" asp-for="ViewModel.ServingMinutes">@Loc["ServiceTime"]</label>
+                                    <InputNumber class="form-control" @bind-Value="ViewModel.ServingMinutes" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label" asp-for="ViewModel.BasePrice">@Loc["BasePrice"]</label>
+                                    <InputNumber class="form-control" @bind-Value="ViewModel.BasePrice" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mb-4">
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" id="customSwitch1" asp-for="ViewModel.IsEnabled">
+                                    <InputCheckbox class="custom-control-input" id="customSwitch1" @bind-Value="ViewModel.IsEnabled" />
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-info"> <i class="fa fa-check"></i> @Loc["Save"]</button>
+                                <button type="button" class="btn btn-dark"> @Loc["Cancel"]</button>
+                            </div>
+                        </div>
+                    </div>
+                </EditForm>
+            </div>
+        </div>
+    </div>
+</div>

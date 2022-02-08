@@ -1,0 +1,43 @@
+﻿@page "/"
+@attribute [Authorize]
+
+@inject IStringLocalizer<Index> Loc
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="text-center">
+                    <h1 class="display-4">BIT Techs - Car Care</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<AuthorizeView Roles="Admin">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">@Loc["RevenueCash"]</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">@Loc["TotalCash"] @DateTime.UtcNow.AddHours(2).ToString("MMM")</h6>
+                    <p class="card-text">
+                        @RevenueCash
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">@Loc["ExpenseCash"]</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">@Loc["TotalCash"] @DateTime.UtcNow.AddHours(2).ToString("MMM")</h6>
+                    <p class="card-text">
+                        @ExpenseCash
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</AuthorizeView>
+

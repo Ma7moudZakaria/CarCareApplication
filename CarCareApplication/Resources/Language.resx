@@ -1,0 +1,671 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutUs" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="Account" xml:space="preserve">
+    <value>My Account</value>
+  </data>
+  <data name="AD-X0001" xml:space="preserve">
+    <value>The provided key is not in the correct format </value>
+  </data>
+  <data name="AD-X0002" xml:space="preserve">
+    <value>An error has occurred while processing the request, please try again later!</value>
+  </data>
+  <data name="AD-X0003" xml:space="preserve">
+    <value>Can't creating an Address with empty values, please check your inputs.</value>
+  </data>
+  <data name="AD-X0004" xml:space="preserve">
+    <value>User Key is not provided</value>
+  </data>
+  <data name="AD-X0005" xml:space="preserve">
+    <value>Phone number can't be empty</value>
+  </data>
+  <data name="AD-X0006" xml:space="preserve">
+    <value>Name can't be empty</value>
+  </data>
+  <data name="AD-X0007" xml:space="preserve">
+    <value>Full address can't be empty</value>
+  </data>
+  <data name="AD-X0008" xml:space="preserve">
+    <value>Kilometers can not be calculated, please check your live location is turned on</value>
+  </data>
+  <data name="AD-X0009" xml:space="preserve">
+    <value>Can't detect your current location, please check your live location is turned on</value>
+  </data>
+  <data name="AD-X0010" xml:space="preserve">
+    <value>Address is not found</value>
+  </data>
+  <data name="AddAddress" xml:space="preserve">
+    <value>Add Address</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="AppDescription" xml:space="preserve">
+    <value>This App Provides Car Washing Service by 4 CarCareApplication company</value>
+  </data>
+  <data name="AppHomeText" xml:space="preserve">
+    <value>CarCareApplication is pleased to provide all integrated cleaning services with the latest cleaning methods and equipment at the lowest costs through our mobile cars.</value>
+  </data>
+  <data name="AppLanguage" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="AppName" xml:space="preserve">
+    <value>Car Care Application</value>
+  </data>
+  <data name="Arabic" xml:space="preserve">
+    <value>Arabic</value>
+  </data>
+  <data name="BasePrice" xml:space="preserve">
+    <value>Base Price</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="CarType" xml:space="preserve">
+    <value>Car Type</value>
+  </data>
+  <data name="ChemicalWashing" xml:space="preserve">
+    <value>Chemical Washing</value>
+  </data>
+  <data name="ChemicalWashingDes" xml:space="preserve">
+    <value>• Washing the ceiling, doors, chairs, tables and menus with vacuuming the dust in the floor with a broom and washing the pedals - polishing for the tableau - freshener - paper pedals - cleaning the glass.
+• The possibility of chemical washing the bag for 50 pounds.
+• A chemical wash will add 60 pounds without dismantling chairs.</value>
+  </data>
+  <data name="ClientMessage" xml:space="preserve">
+    <value>Couldn't remove</value>
+  </data>
+  <data name="ContactUs" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="CT-X0001" xml:space="preserve">
+    <value>The provided key is not in the correct format </value>
+  </data>
+  <data name="CT-X0002" xml:space="preserve">
+    <value>An error has occurred while processing the request, please try again later!</value>
+  </data>
+  <data name="CT-X0003" xml:space="preserve">
+    <value>Language code can not be empty</value>
+  </data>
+  <data name="CT-X0004" xml:space="preserve">
+    <value>Car type is not found</value>
+  </data>
+  <data name="CT-X0005" xml:space="preserve">
+    <value>Can't creating a Car type with empty values, please check your inputs.</value>
+  </data>
+  <data name="CT-X0006" xml:space="preserve">
+    <value>A Car type with the same name is already exists</value>
+  </data>
+  <data name="CT-X0007" xml:space="preserve">
+    <value>Arabic name can not be empty</value>
+  </data>
+  <data name="CT-X0008" xml:space="preserve">
+    <value>English name can not be empty</value>
+  </data>
+  <data name="CT-X0009" xml:space="preserve">
+    <value>Arabic description can not be empty</value>
+  </data>
+  <data name="CT-X0010" xml:space="preserve">
+    <value>English description can not be empty</value>
+  </data>
+  <data name="CT-X0011" xml:space="preserve">
+    <value>Can't update a Car type with empty values, please check your inputs.</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>EGP</value>
+  </data>
+  <data name="DeliveryPrice" xml:space="preserve">
+    <value>Delivery Price</value>
+  </data>
+  <data name="DialUp" xml:space="preserve">
+    <value>Dial Up</value>
+  </data>
+  <data name="DistanceError" xml:space="preserve">
+    <value>We Don't support away services, contact with the managment for more support</value>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>Done</value>
+  </data>
+  <data name="DoneError" xml:space="preserve">
+    <value>Error while commiting the order as done</value>
+  </data>
+  <data name="DY-X0001" xml:space="preserve">
+    <value>The provided key is not in the correct format </value>
+  </data>
+  <data name="DY-X0002" xml:space="preserve">
+    <value>An error has occurred while processing the request, please try again later!</value>
+  </data>
+  <data name="DY-X0003" xml:space="preserve">
+    <value>Language can not be empty</value>
+  </data>
+  <data name="DY-X0004" xml:space="preserve">
+    <value>Can't creating a day with empty values, please check your inputs.</value>
+  </data>
+  <data name="DY-X0005" xml:space="preserve">
+    <value>Arabic day name can not be empty</value>
+  </data>
+  <data name="DY-X0006" xml:space="preserve">
+    <value>English day name can not be empty</value>
+  </data>
+  <data name="DY-X0007" xml:space="preserve">
+    <value>A day name with the same name is already exists</value>
+  </data>
+  <data name="DY-X0008" xml:space="preserve">
+    <value>Can't update a day with empty values, please check your inputs.</value>
+  </data>
+  <data name="DY-X0009" xml:space="preserve">
+    <value>Day is not found</value>
+  </data>
+  <data name="EngineWashing" xml:space="preserve">
+    <value>Engine Washing</value>
+  </data>
+  <data name="EngineWashingDes" xml:space="preserve">
+    <value>The motor is washed with foam intended for cleaning oils and grease and microfiber towels only</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="EPS-X0001" xml:space="preserve">
+    <value>The provided key is not in the correct format </value>
+  </data>
+  <data name="EPS-X0002" xml:space="preserve">
+    <value>An error has occurred while processing the request, please try again later!</value>
+  </data>
+  <data name="EPS-X0003" xml:space="preserve">
+    <value>Language can not be empty</value>
+  </data>
+  <data name="EPS-X0004" xml:space="preserve">
+    <value>Extra price setting is not found</value>
+  </data>
+  <data name="EPS-X0005" xml:space="preserve">
+    <value>Can't creating Extra price setting with empty values, please check your inputs.</value>
+  </data>
+  <data name="EPS-X0006" xml:space="preserve">
+    <value>Car type is not selected</value>
+  </data>
+  <data name="EPS-X0007" xml:space="preserve">
+    <value>Service is not selected</value>
+  </data>
+  <data name="EPS-X0008" xml:space="preserve">
+    <value>Extra price can not be equal or less than 0</value>
+  </data>
+  <data name="EPS-X0009" xml:space="preserve">
+    <value>Can't update Extra price setting with empty values, please check your inputs.</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="EX-X0001" xml:space="preserve">
+    <value>An error has occurred while processing the request, please try again later!</value>
+  </data>
+  <data name="EX-X0002" xml:space="preserve">
+    <value>Can't creating Expense with empty values, please check your inputs.</value>
+  </data>
+  <data name="EX-X0003" xml:space="preserve">
+    <value>Description can not be empty</value>
+  </data>
+  <data name="EX-X0004" xml:space="preserve">
+    <value>Cash can not be equal or less than 0</value>
+  </data>
+  <data name="ExtraCharge" xml:space="preserve">
+    <value>Extra Charge</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>First name *</value>
+  </data>
+  <data name="FullAddress" xml:space="preserve">
+    <value>Full address *</value>
+  </data>
+  <data name="GoBackHome" xml:space="preserve">
+    <value>Go Home</value>
+  </data>
+  <data name="GoTo" xml:space="preserve">
+    <value>Naivgate To</value>
+  </data>
+  <data name="GPSDeciveError" xml:space="preserve">
+    <value>Enable GPS in your device</value>
+  </data>
+  <data name="GPSLocationError" xml:space="preserve">
+    <value>Your device doesn't support GPS location detection!</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="HOW-X0001" xml:space="preserve">
+    <value>The provided key is not in the correct format </value>
+  </data>
+  <data name="HOW-X0002" xml:space="preserve">
+    <value>Hour of work is not found</value>
+  </data>
+  <data name="HOW-X0003" xml:space="preserve">
+    <value>An error has occurred while processing the request, please try again later!</value>
+  </data>
+  <data name="HOW-X0004" xml:space="preserve">
+    <value>Language can not be empty</value>
+  </data>
+  <data name="HOW-X0005" xml:space="preserve">
+    <value>Service is not provided</value>
+  </data>
+  <data name="HR-X0001" xml:space="preserve">
+    <value>The provided key is not in the correct format </value>
+  </data>
+  <data name="HR-X0002" xml:space="preserve">
+    <value>Hour is not found</value>
+  </data>
+  <data name="HR-X0003" xml:space="preserve">
+    <value>An error has occurred while processing the request, please try again later!</value>
+  </data>
+  <data name="HR-X0004" xml:space="preserve">
+    <value>Language can not be empty</value>
+  </data>
+  <data name="KilometersAway" xml:space="preserve">
+    <value>Kilometers Away</value>
+  </data>
+  <data name="Km" xml:space="preserve">
+    <value>K.m</value>
+  </data>
+  <data name="LocationError" xml:space="preserve">
+    <value>Unanle to get location!</value>
+  </data>
+  <data name="LocationPermissionError" xml:space="preserve">
+    <value>Enable location permission in your App Settings</value>
+  </data>
+  <data name="LocationType" xml:space="preserve">
+    <value>Location's type *</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="LoginRequired" xml:space="preserve">
+    <value>Login or create a new account</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="MakeAnAppointment" xml:space="preserve">
+    <value>Make An Appointment</value>
+  </data>
+  <data name="MakeOrderError" xml:space="preserve">
+    <value>We couldn't place the order, please try again, if the issue still exists, contact with the managment</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Person's Name *</value>
+  </data>
+  <data name="NavigateTo" xml:space="preserve">
+    <value>Navigate To</value>
+  </data>
+  <data name="NoAddresses" xml:space="preserve">
+    <value>No Addresses</value>
+  </data>
+  <data name="NoOrders" xml:space="preserve">
+    <value>No Orders</value>
+  </data>
+  <data name="NormalWashing" xml:space="preserve">
+    <value>Normal Washing</value>
+  </data>
+  <data name="NormalWashingDes" xml:space="preserve">
+    <value>Dust suction - tableau - menus - doors - chairs - floors - pedal washing - glass - tableware polish - freshener - paper pedals</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="OrderDetails" xml:space="preserve">
+    <value>Order Details</value>
+  </data>
+  <data name="OrderPlaced" xml:space="preserve">
+    <value>Order Placed</value>
+  </data>
+  <data name="Orders" xml:space="preserve">
+    <value>My Orders</value>
+  </data>
+  <data name="OutsideWashingNormal" xml:space="preserve">
+    <value>Dry external wash</value>
+  </data>
+  <data name="OutsideWashingNormalDes" xml:space="preserve">
+    <value>Full exterior wash, rims cleaning and polishing + in addition to an outer layer of wax that gives protection and shine</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password *</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Phone number *</value>
+  </data>
+  <data name="PickLanguage" xml:space="preserve">
+    <value>Default App Language</value>
+  </data>
+  <data name="PlaceOrder" xml:space="preserve">
+    <value>Place Order</value>
+  </data>
+  <data name="PoweredBy" xml:space="preserve">
+    <value>Powered By</value>
+  </data>
+  <data name="RE-X0001" xml:space="preserve">
+    <value>An error has occurred while processing the request, please try again later!</value>
+  </data>
+  <data name="RE-X0002" xml:space="preserve">
+    <value>Can't creating Revenue with empty values, please check your inputs.</value>
+  </data>
+  <data name="RE-X0003" xml:space="preserve">
+    <value>Description can not be empty</value>
+  </data>
+  <data name="RE-X0004" xml:space="preserve">
+    <value>Cash can not be equal or less than 0</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="RemoveError" xml:space="preserve">
+    <value>We couldn't remove the order, please try again</value>
+  </data>
+  <data name="RequestLocation" xml:space="preserve">
+    <value>Request Location</value>
+  </data>
+  <data name="RequestPersonName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="RequestPhoneNumber" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="RequestTime" xml:space="preserve">
+    <value>Request Time</value>
+  </data>
+  <data name="RestartRequired" xml:space="preserve">
+    <value>Restart the application to have full impact for the selected language</value>
+  </data>
+  <data name="SE-X0001" xml:space="preserve">
+    <value>The provided key is not in the correct format </value>
+  </data>
+  <data name="SE-X0002" xml:space="preserve">
+    <value>Service can not be empty</value>
+  </data>
+  <data name="SE-X0003" xml:space="preserve">
+    <value>An error has occurred while processing the request, please try again later!</value>
+  </data>
+  <data name="SE-X0004" xml:space="preserve">
+    <value>Language can not be empty</value>
+  </data>
+  <data name="SE-X0005" xml:space="preserve">
+    <value>Car type is not selected</value>
+  </data>
+  <data name="SE-X0006" xml:space="preserve">
+    <value>Car type is not found</value>
+  </data>
+  <data name="SE-X0007" xml:space="preserve">
+    <value>Can't creating a Service with empty values, please check your inputs.</value>
+  </data>
+  <data name="SE-X0008" xml:space="preserve">
+    <value>Base price can not be less or equal to 0</value>
+  </data>
+  <data name="SE-X0009" xml:space="preserve">
+    <value>Arabic name can not be empty </value>
+  </data>
+  <data name="SE-X0010" xml:space="preserve">
+    <value>English name can not be empty </value>
+  </data>
+  <data name="SE-X0011" xml:space="preserve">
+    <value>Service with same name already exists </value>
+  </data>
+  <data name="SE-X0012" xml:space="preserve">
+    <value>Can't update a service with empty values, please check your inputs.</value>
+  </data>
+  <data name="SE-X0013" xml:space="preserve">
+    <value>Arabic description can not be empty</value>
+  </data>
+  <data name="SE-X0014" xml:space="preserve">
+    <value>English description can not be empty</value>
+  </data>
+  <data name="SecondName" xml:space="preserve">
+    <value>Second name *</value>
+  </data>
+  <data name="SelectLanguage" xml:space="preserve">
+    <value>Select Language</value>
+  </data>
+  <data name="ServerType" xml:space="preserve">
+    <value>Service Type</value>
+  </data>
+  <data name="Service" xml:space="preserve">
+    <value>Service</value>
+  </data>
+  <data name="ServiceDescription" xml:space="preserve">
+    <value>Services Description</value>
+  </data>
+  <data name="SET-X0001" xml:space="preserve">
+    <value>The provided key is not in the correct format </value>
+  </data>
+  <data name="SET-X0002" xml:space="preserve">
+    <value>Setting is not found</value>
+  </data>
+  <data name="SET-X0003" xml:space="preserve">
+    <value>An error has occurred while processing the request, please try again later!</value>
+  </data>
+  <data name="SET-X0004" xml:space="preserve">
+    <value>Language can not be empty</value>
+  </data>
+  <data name="SET-X0005" xml:space="preserve">
+    <value>Can't creating setting with empty values, please check your inputs.</value>
+  </data>
+  <data name="SET-X0006" xml:space="preserve">
+    <value>Service type is not selected</value>
+  </data>
+  <data name="SET-X0007" xml:space="preserve">
+    <value>Car type is not selected</value>
+  </data>
+  <data name="SET-X0008" xml:space="preserve">
+    <value>Max kilometers can not be less or equal to 0</value>
+  </data>
+  <data name="SET-X0009" xml:space="preserve">
+    <value>Min kilometers can not be less or equal to 0</value>
+  </data>
+  <data name="SET-X0010" xml:space="preserve">
+    <value>Min Kilometers can not be equal to Max Kilometers</value>
+  </data>
+  <data name="SET-X0011" xml:space="preserve">
+    <value>Min kilometers can not be greater than Max kilometers</value>
+  </data>
+  <data name="SET-X0012" xml:space="preserve">
+    <value>Kilometers rate can not be less or equal to 0</value>
+  </data>
+  <data name="SET-X0013" xml:space="preserve">
+    <value>We are sorry, your selected address is out of our service scope for the selected service, please either change your address or try to pick another service</value>
+  </data>
+  <data name="SET-X0014" xml:space="preserve">
+    <value>A setting with the same service and cat type has been set before</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="SigninError" xml:space="preserve">
+    <value>The entered phone number or password are not correct</value>
+  </data>
+  <data name="Signup" xml:space="preserve">
+    <value>Signup</value>
+  </data>
+  <data name="SignupError" xml:space="preserve">
+    <value>the entered data can't set up an account for you, please make sure you entered valida data or not duplicated</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="ThankYou" xml:space="preserve">
+    <value>Thank You!</value>
+  </data>
+  <data name="TR-X0001" xml:space="preserve">
+    <value>The provided key is not in the correct format </value>
+  </data>
+  <data name="TR-X0002" xml:space="preserve">
+    <value>Setting is not found</value>
+  </data>
+  <data name="TR-X0003" xml:space="preserve">
+    <value>An error has occurred while processing the request, please try again later!</value>
+  </data>
+  <data name="TR-X0004" xml:space="preserve">
+    <value>Can't creating transaction with empty values, please check your inputs.</value>
+  </data>
+  <data name="TR-X0005" xml:space="preserve">
+    <value>Service is not provided</value>
+  </data>
+  <data name="TR-X0006" xml:space="preserve">
+    <value>Car type is not provided </value>
+  </data>
+  <data name="TR-X0007" xml:space="preserve">
+    <value>Work hour is not provided</value>
+  </data>
+  <data name="TR-X0008" xml:space="preserve">
+    <value>Order is not found</value>
+  </data>
+  <data name="UR-X0001" xml:space="preserve">
+    <value>Can not sign in with empty values</value>
+  </data>
+  <data name="UR-X0002" xml:space="preserve">
+    <value>Password can not be empty </value>
+  </data>
+  <data name="UR-X0003" xml:space="preserve">
+    <value>Phone Number can not be empty</value>
+  </data>
+  <data name="UR-X0004" xml:space="preserve">
+    <value>Phone number or Password is not correct , Register for a new account or try to sign in again</value>
+  </data>
+  <data name="UR-X0005" xml:space="preserve">
+    <value>An error has occurred while processing the request, please try again later!</value>
+  </data>
+  <data name="UR-X0006" xml:space="preserve">
+    <value>First name can not be empty </value>
+  </data>
+  <data name="UR-X0007" xml:space="preserve">
+    <value>Second name can not be empty </value>
+  </data>
+  <data name="UR-X0008" xml:space="preserve">
+    <value>Phone Number is already exists , try to sign in instead</value>
+  </data>
+  <data name="UR-X0009" xml:space="preserve">
+    <value>can not sign up with empty values </value>
+  </data>
+  <data name="UR-X0010" xml:space="preserve">
+    <value>Role cannot be empty</value>
+  </data>
+  <data name="Vehicle" xml:space="preserve">
+    <value>Vehicle</value>
+  </data>
+  <data name="WhatsApp" xml:space="preserve">
+    <value>WhatsApp</value>
+  </data>
+</root>

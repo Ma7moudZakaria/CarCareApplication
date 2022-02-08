@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:home="clr-namespace:CarCareApplication.Views.Home"
+       xmlns:icons="clr-namespace:CarCareApplication.Resources.Fonts"
+       xmlns:account="clr-namespace:CarCareApplication.Views.Accounts"
+       xmlns:orders="clr-namespace:CarCareApplication.Views.Orders"
+       xmlns:resouces="clr-namespace:CarCareApplication.Resources"
+       xmlns:templates="clr-namespace:CarCareApplication.Templates"
+       FlowDirection="{x:Static Device.FlowDirection}"
+       Visual="Material"
+       x:Class="CarCareApplication.AppShell">
+
+    <!--
+        The overall app visual hierarchy is defined here, along with navigation.
+    
+        https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
+    -->
+
+    <Shell.Resources>
+
+        
+        <templates:OrderTemplateSelector x:Key="OrderSelector" AdminOrder="{DataTemplate orders:AdminOrderPage}" ClientOrder="{DataTemplate orders:ClientOrderPage}"/>
+
+
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource BackgroundColor}" />
+                <Setter Property="Shell.ForegroundColor" Value="Black" />
+                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource Primary}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="White"/>
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <TabBar>
+        <Tab Title="{x:Static resouces:Language.Home}"  Route="HomePage">
+            <Tab.Icon>
+                <FontImageSource Glyph="{x:Static icons:IconFont.Home}" FontFamily="Matrial"/>
+            </Tab.Icon>
+            <ShellContent  ContentTemplate="{DataTemplate  home:HomePage }" />
+        </Tab>
+        <Tab Title="{x:Static resouces:Language.Orders}" Route="AdminOrderPage">
+            <Tab.Icon>
+                <FontImageSource Glyph="{x:Static icons:IconFont.Car}" FontFamily="Matrial"/>
+            </Tab.Icon>
+            <ShellContent  ContentTemplate="{x:StaticResource OrderSelector}" />
+        </Tab>
+        
+        <Tab Title="{x:Static resouces:Language.Account}"  Route="AccountPage">
+            <Tab.Icon>
+                <FontImageSource Glyph="{x:Static icons:IconFont.Account}" FontFamily="Matrial"/>
+            </Tab.Icon>
+            <ShellContent  ContentTemplate="{DataTemplate account:AccountPage}" />
+        </Tab>
+    </TabBar>
+</Shell>

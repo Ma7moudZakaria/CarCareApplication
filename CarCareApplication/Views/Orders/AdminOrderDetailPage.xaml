@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:icons="clr-namespace:CarCareApplication.Resources.Fonts"
+             Shell.PresentationMode="ModalAnimated"          
+             Shell.NavBarHasShadow="False"
+             xmlns:resource="clr-namespace:CarCareApplication.Resources"    
+             FlowDirection="{x:Static Device.FlowDirection}"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             BackgroundColor="{x:DynamicResource BackgroundColor}"
+             x:Class="CarCareApplication.Views.Orders.AdminOrderDetailPage">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="White">
+
+                <StackLayout>
+
+                    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                        <Label Text="{x:Static resource:Language.RequestPersonName}"  FontFamily="{x:DynamicResource SemiBold}" TextColor="Black"/>
+                        <Label Text="{x:Binding AdminOrderDetail.UserName}"  FontFamily="{x:DynamicResource Light}" TextColor="Black"/>
+                    </StackLayout>
+
+
+                    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                        <Label Text="{x:Static resource:Language.RequestPersonName}"  FontFamily="{x:DynamicResource SemiBold}" TextColor="Black"/>
+                        <Label Text="{x:Binding AdminOrderDetail.UserName}"  FontFamily="{x:DynamicResource Light}" TextColor="Black"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{x:Binding CallCommand}" NumberOfTapsRequired="1" CommandParameter="{x:Binding AdminOrderDetail.PhoneNumber}"/>
+                        </StackLayout.GestureRecognizers>
+                        <Label Text="{x:Static resource:Language.RequestPhoneNumber}"  FontFamily="{x:DynamicResource SemiBold}" TextColor="Black"/>
+                        <Label Text="{x:Binding AdminOrderDetail.PhoneNumber}"  FontFamily="{x:DynamicResource Light}" TextColor="Black"/>
+                    </StackLayout>
+
+
+                    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                        <Label Text="{x:Static resource:Language.CarType}"  FontFamily="{x:DynamicResource SemiBold}" TextColor="Black"/>
+                        <Label Text="{x:Binding AdminOrderDetail.CarType}"  FontFamily="{x:DynamicResource Light}" TextColor="Black"/>
+                    </StackLayout>
+
+
+                    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                        <Label Text="{x:Static resource:Language.ServerType}"  FontFamily="{x:DynamicResource SemiBold}" TextColor="Black"/>
+                        <Label Text="{x:Binding AdminOrderDetail.ServiceType}"  FontFamily="{x:DynamicResource Light}" TextColor="Black"/>
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                        <Label Text="{x:Static resource:Language.KilometersAway}"  FontFamily="{x:DynamicResource SemiBold}" TextColor="Black"/>
+                        <Label Text="{x:Binding AdminOrderDetail.KilometersAway}"  FontFamily="{x:DynamicResource Light}" TextColor="Black"/>
+                        <Label Text="{x:Static resource:Language.Km}"  FontFamily="{x:DynamicResource Light}" TextColor="Black"/>
+                    </StackLayout>
+
+
+                    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                        <Label Text="{x:Static resource:Language.BasePrice}"  FontFamily="{x:DynamicResource SemiBold}" TextColor="Black"/>
+                        <Label Text="{x:Binding AdminOrderDetail.BasePrice}"  FontFamily="{x:DynamicResource Light}" TextColor="Black"/>
+                        <Label Text="{x:Static resource:Language.Currency}"  FontFamily="{x:DynamicResource Light}" TextColor="Black"/>
+                    </StackLayout>
+
+
+                    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                        <Label Text="{x:Static resource:Language.RequestTime}"  FontFamily="{x:DynamicResource SemiBold}" TextColor="Black"/>
+                        <Label Text="{x:Binding AdminOrderDetail.ServiceTime}"  FontFamily="{x:DynamicResource Light}" TextColor="Black"/>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            
+            <maps:Map HasZoomEnabled="True" HasScrollEnabled="True" x:Name="AppMap" HeightRequest="400"/>
+
+            <Button Text="{x:Static resource:Language.NavigateTo}" Command="{x:Binding OpenGoogleMapsCommand}" FontFamily="{x:DynamicResource Bold}"/>
+            <ActivityIndicator IsRunning="{x:Binding IsRunning}" 
+                                   Color="#fca41c" 
+                                   HorizontalOptions="FillAndExpand" 
+                                   VerticalOptions="EndAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

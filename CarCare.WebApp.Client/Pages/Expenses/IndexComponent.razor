@@ -1,0 +1,40 @@
+﻿@page "/Expenses/Index"
+
+@inject IStringLocalizer<IndexComponent> Loc
+
+@attribute [Authorize(Roles = "Admin")]
+
+<a href="/Expenses/Add" class="btn btn-outline-primary">@Loc["Add"]</a>
+
+<div class="row">
+    <!-- column -->
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">@Loc["ExpenseIndex"]</h4>
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <th width=20px>#</th>
+                                <th>@Loc["Cash"]</th>
+                                <th>@Loc["Description"]</th>
+                                <th>@Loc["Date"]</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <Virtualize TItem="CarCareApplication.Core.Shared.ViewModels.ExpensesModels.IndexExpenseViewModel" Items="ItemsSource" Context="Item">
+                                <tr>
+                                    <td>@Item.Id</td>
+                                    <td>@Item.Cash</td>
+                                    <td>@Item.Description</td>
+                                    <td>@Item.Date.ToString("D")</td>
+                                </tr>
+                            </Virtualize>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:VM="clr-namespace:CarCareApplication.ViewModels.Account"
+             xmlns:hourofworkmodels="clr-namespace:CarCareApplication.Core.Shared.ViewModels.HourOfWorkModels;assembly=CarCareApplication.Core.Shared" 
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             Shell.NavBarHasShadow="False"             
+             FlowDirection="{x:Static Device.FlowDirection}"
+             BackgroundColor="{x:DynamicResource BackgroundColor}"
+             x:Class="CarCareApplication.Views.Accounts.AppointmentPage">
+    <ContentPage.BindingContext>
+        <VM:AppointmentViewModel x:Name="AppointmentViewModel"/>
+    </ContentPage.BindingContext>
+    <ContentPage.Behaviors>
+        <xct:EventToCommandBehavior EventName="Appearing" Command="{x:Binding LoadCommand}" />
+    </ContentPage.Behaviors>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid>
+        <CollectionView ItemsSource="{x:Binding AppointmentGroups}" IsGrouped="True" Margin="9">
+            <CollectionView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <Label Text="{x:Binding Header}" Style="{x:DynamicResource AppointmentTitleStyle}" FontFamily="{x:DynamicResource Black}"/>
+                </DataTemplate>
+            </CollectionView.GroupHeaderTemplate>
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="2" VerticalItemSpacing="2"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="hourofworkmodels:IndexHourOfWorkViewModel">
+                    <Frame Style="{x:DynamicResource AppointmentFrame}">
+                        <Button Text="{x:Binding Name}" 
+                                                Style="{x:DynamicResource AppointmentButtonStyle}" 
+                                                HeightRequest="45"
+                                                Command="{x:Binding SelectAppointmentCommand,Source={x:Reference Name=AppointmentViewModel}}"
+                                                CommandParameter="{x:Binding Id}"
+                                                FontFamily="{x:DynamicResource Bold}"
+                                                >
+                        </Button>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <ActivityIndicator IsRunning="{x:Binding IsRunning}" Color="#fca41c" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand"/>
+    </Grid>
+</ContentPage>

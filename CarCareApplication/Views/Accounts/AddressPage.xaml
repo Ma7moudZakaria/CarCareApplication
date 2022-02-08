@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:icons="clr-namespace:CarCareApplication.Resources.Fonts"
+             xmlns:VM="clr-namespace:CarCareApplication.ViewModels.Account" 
+             xmlns:addressmodels="clr-namespace:CarCareApplication.Core.Shared.ViewModels.AddressModels;assembly=CarCareApplication.Core.Shared"
+             Shell.NavBarHasShadow="False"    
+             FlowDirection="{x:Static Device.FlowDirection}"
+             xmlns:resource="clr-namespace:CarCareApplication.Resources" 
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             BackgroundColor="{x:DynamicResource BackgroundColor}"
+             x:Class="CarCareApplication.Views.Accounts.AddressPage">
+    <ContentPage.Behaviors>
+        <xct:EventToCommandBehavior EventName="Appearing" Command="{x:Binding LoadCommand}" />
+    </ContentPage.Behaviors>
+    <ContentPage.BindingContext>
+        <VM:AddressViewModel x:Name="AddressViewModel"/>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" Margin="9">
+            <CollectionView ItemsSource="{x:Binding Addresses}" VerticalOptions="Start"
+                            SelectionMode="Single" SelectionChangedCommand="{x:Binding AddressSelectedCommand}" SelectedItem="{x:Binding SelectedAddress}">
+                <CollectionView.EmptyView>
+                    <ContentView>
+                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                            <Image  VerticalOptions="Center" >
+                                <Image.Source>
+                                    <FontImageSource Glyph="{x:Static icons:IconFont.MapLegend}" FontFamily="Matrial" Size="Header" Color="Black"/>
+                                </Image.Source>
+                            </Image>
+
+                            <!--  Label to display header  -->
+                            <Label  FontSize="20" HorizontalTextAlignment="Center"  HorizontalOptions="Center"  FontFamily="{x:DynamicResource Bold}"
+                                            Text="{x:Static resource:Language.NoAddresses}" VerticalTextAlignment="Center" TextColor="Black"/>
+
+                        </StackLayout>
+                    </ContentView>
+                </CollectionView.EmptyView>
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout ItemSpacing="6" Orientation="Vertical"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="addressmodels:IndexAddressViewModel">
+                        <SwipeView>
+                            <SwipeView.RightItems>
+                                <SwipeItems Mode="Reveal">
+                                    <SwipeItem Text="{x:Static resource:Language.Remove}" BackgroundColor="Transparent" Command="{x:Binding RemoveCommand,Source={x:Reference Name=AddressViewModel}}" CommandParameter="{x:Binding Id}">
+                                        <SwipeItem.IconImageSource>
+                                            <FontImageSource Glyph="{x:Static icons:IconFont.Delete}" FontFamily="Matrial" Color="Black"/>
+                                        </SwipeItem.IconImageSource>
+                                    </SwipeItem>
+                                </SwipeItems>
+                            </SwipeView.RightItems>
+                            <Frame Style="{x:DynamicResource AddressFrame}">
+                                <StackLayout>
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup Name="CommonStates">
+                                            <VisualState Name="Normal" >
+                                                <VisualState.Setters>
+                                                    <Setter Property="BackgroundColor" Value="Transparent" />
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                            <VisualState Name="Selected">
+                                                <VisualState.Setters>
+                                                    <Setter Property="BackgroundColor" Value="{DynamicResource BackgroundPageColor}" />
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                    <Label>
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{x:Static icons:IconFont.Account}" FontFamily="Matrial"/>
+                                                <Span Text=" " FontSize="Medium"/>
+                                                <Span Text="{x:Binding Name}" FontSize="Medium" FontFamily="{x:DynamicResource Bold}"/>
+                                                <Span Text=" " FontSize="Medium"/>
+                                                <Span Text="{x:Binding Type}" FontSize="Small" FontFamily="{x:DynamicResource Light}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label>
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{x:Static icons:IconFont.MapMarker}" FontFamily="Matrial"/>
+                                                <Span Text=" " FontSize="Medium"/>
+                                                <Span Text="{x:Binding FullAddress}" FontSize="Small" FontFamily="{x:DynamicResource Light}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label>
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{x:Static icons:IconFont.Phone}" FontFamily="Matrial"/>
+                                                <Span Text=" " FontSize="Medium"/>
+                                                <Span Text="{x:Binding PhoneNumber}" FontSize="Small" FontFamily="{x:DynamicResource Ligth}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                </StackLayout>
+                            </Frame>
+                        </SwipeView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                <CollectionView.Footer>
+                   
+                </CollectionView.Footer>
+            </CollectionView>
+
+            <StackLayout VerticalOptions="EndAndExpand">
+                <Button Text="{x:Static resource:Language.AddAddress}" HeightRequest="50"  Command="{x:Binding AddCommand}" FontFamily="{x:DynamicResource Bold}"/>
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,101 @@
+﻿
+@inject IStringLocalizer<NavMenu> Loc
+
+<div class="top-row pl-4 navbar navbar-dark">
+    <a class="navbar-brand" href="">Car Care</a>
+    <button class="navbar-toggler" @onclick="ToggleNavMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</div>
+
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+    <ul class="nav flex-column">
+        <AuthorizeView>
+            <Authorized>
+                <li class="nav-item px-3">
+                    <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                        <span class="oi oi-home" aria-hidden="true"></span> @Loc["Home"]
+                    </NavLink>
+                </li>
+
+                <li class="nav-item px-3">
+                    <NavLink class="nav-link" href="/CarType/Index">
+                        <span class="oi oi-plus" aria-hidden="true"></span> @Loc["CarType"]
+                    </NavLink>
+                </li>
+                <li class="nav-item px-3">
+                    <NavLink class="nav-link" href="/Day/Index">
+                        <span class="oi oi-plus" aria-hidden="true"></span> @Loc["Days"]
+                    </NavLink>
+                </li>
+                <li class="nav-item px-3">
+                    <NavLink class="nav-link" href="/Hour/Index">
+                        <span class="oi oi-plus" aria-hidden="true"></span> @Loc["Hours"]
+                    </NavLink>
+                </li>
+
+                <li class="nav-item px-3">
+                    <NavLink class="nav-link" href="/Service/Index">
+                        <span class="oi oi-plus" aria-hidden="true"></span> @Loc["Service"]
+                    </NavLink>
+                </li>
+                <li class="nav-item px-3">
+                    <NavLink class="nav-link" href="/Setting/Index">
+                        <span class="oi oi-plus" aria-hidden="true"></span> @Loc["Setting"]
+                    </NavLink>
+                </li>
+                @if (context.User.IsInRole("Admin"))
+                {
+                    <li class="nav-item px-3">
+                        <NavLink class="nav-link" href="/ExtraPriceSetting/Index">
+                            <span class="oi oi-plus" aria-hidden="true"></span> @Loc["ExtraPriceSetting"]
+                        </NavLink>
+                    </li>
+
+                    <li class="nav-item px-3">
+                        <NavLink class="nav-link" href="/Expenses/Index">
+                            <span class="oi oi-plus" aria-hidden="true"></span> @Loc["Expenses"]
+                        </NavLink>
+                    </li>
+                    <li class="nav-item px-3">
+                        <NavLink class="nav-link" href="/Revenue/Index">
+                            <span class="oi oi-plus" aria-hidden="true"></span> @Loc["Revenues"]
+                        </NavLink>
+                    </li>
+                    <li class="nav-item px-3">
+                        <NavLink class="nav-link" href="/Timetable/Index">
+                            <span class="oi oi-list-rich" aria-hidden="true"></span> @Loc["Timetable"]
+                        </NavLink>
+                    </li>
+                    <li class="nav-item px-3">
+                        <NavLink class="nav-link" href="/Account/Register">
+                            <span class="oi oi-list-rich" aria-hidden="true"></span> @Loc["Register"]
+                        </NavLink>
+                    </li>
+                }
+                <li class="nav-item px-3">
+                    <NavLink class="nav-link" href="/Account/Logout">
+                        <span class="oi oi-plus" aria-hidden="true"></span> @Loc["Logout"]
+                    </NavLink>
+                </li>
+            </Authorized>
+            <NotAuthorized>
+                <li class="nav-item px-3">
+                    <NavLink class="nav-link" href="Account/Login">
+                        <span class="oi oi-plus" aria-hidden="true"></span> @Loc["Login"]
+                    </NavLink>
+                </li>
+                <li class="nav-item px-3">
+                    <NavLink class="nav-link" href="Account/Register">
+                        <span class="oi oi-plus" aria-hidden="true"></span> @Loc["Register"]
+                    </NavLink>
+                </li>
+
+            </NotAuthorized>
+        </AuthorizeView>
+    </ul>
+</div>
+
+@code {
+
+}

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:VM="clr-namespace:CarCareApplication.ViewModels.Account"
+             x:Class="CarCareApplication.Views.Accounts.SignupPage"             
+             Shell.NavBarHasShadow="False"             FlowDirection="{x:Static Device.FlowDirection}"
+
+             xmlns:resource="clr-namespace:CarCareApplication.Resources" 
+             BackgroundColor="{x:DynamicResource BackgroundColor}"    
+             >
+
+    <ContentPage.BindingContext>
+        <VM:SignupViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+
+        <StackLayout  VerticalOptions="CenterAndExpand" Margin="9" Padding="0">
+
+            <Entry Style="{x:DynamicResource BasicEntry}" Placeholder="{x:Static resource:Language.FirstName}" Keyboard="Text"  Text="{x:Binding FirstName}" FontFamily="{x:DynamicResource Light}"/>
+
+            <Entry  Style="{x:DynamicResource BasicEntry}" Placeholder="{x:Static resource:Language.SecondName}" Keyboard="Text" Text="{x:Binding SecondName}" FontFamily="{x:DynamicResource Light}"/>
+
+            <Entry Style="{x:DynamicResource BasicEntry}" Placeholder="{x:Static resource:Language.PhoneNumber}" Keyboard="Telephone" Text="{x:Binding PhoneNumber}" FontFamily="{x:DynamicResource Light}"/>
+
+            <Entry  IsPassword="True" Style="{x:DynamicResource BasicEntry}" Placeholder="{x:Static resource:Language.Password}" Keyboard="Text" Text="{x:Binding Password}" FontFamily="{x:DynamicResource Light}"/>
+
+            <Button Text="{x:Static resource:Language.Signup}" HeightRequest="50" CornerRadius="5" Command="{x:Binding SignupCommand}" FontFamily="{x:DynamicResource Bold}"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

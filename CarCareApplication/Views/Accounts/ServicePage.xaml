@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:VM="clr-namespace:CarCareApplication.ViewModels.Account"
+             FlowDirection="{x:Static Device.FlowDirection}"
+             xmlns:converters="clr-namespace:CarCareApplication.Converters" 
+             xmlns:servicemodels="clr-namespace:CarCareApplication.Core.Shared.ViewModels.ServiceModels;assembly=CarCareApplication.Core.Shared"
+             BackgroundColor="{x:DynamicResource BackgroundColor}"             
+             Shell.NavBarHasShadow="False"
+             xmlns:resource="clr-namespace:CarCareApplication.Resources" 
+             x:Class="CarCareApplication.Views.Accounts.ServicePage">
+    <ContentPage.BindingContext>
+        <VM:ServiceViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <converters:BasePriceConverter x:Key="BasePriceConverter"/>
+        <converters:ServeringTimeConverter x:Key="ServeringTimeConverter"/>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <CollectionView Margin="9" ItemsSource="{x:Binding ServiceCards}"
+                    SelectionMode="Single" 
+                    SelectionChangedCommand="{x:Binding ServiceSelectedCommand}"
+                    SelectedItem="{x:Binding SelectedServiceCard}">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout  Orientation="Vertical" ItemSpacing="6"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="servicemodels:IndexServiceViewModel">
+                    <Frame Style="{x:DynamicResource ServiceFrame}">
+                        <StackLayout>
+                            <Label Text="{x:Binding Name}"  Style="{x:DynamicResource ServiceTitleStyle}" FontFamily="{x:DynamicResource Bold}"/>
+                            <Label Text="{x:Binding Description}" HorizontalTextAlignment="Center" Style="{x:DynamicResource LightText}" FontSize="Caption" HorizontalOptions="Center" TextColor="White" MaxLines="3"/>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{x:Binding BasePrice,Converter={x:StaticResource BasePriceConverter}}" Style="{x:DynamicResource ServiceSubtitleStyle}" FontFamily="{x:DynamicResource Bold}"/>
+                                <Label Text="{x:Binding ServingMinutes,Converter={x:StaticResource ServeringTimeConverter}}" Style="{x:DynamicResource ServiceSubtitleStyle}" FontFamily="{x:DynamicResource Bold}"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <ActivityIndicator IsRunning="{x:Binding IsRunning}" 
+                                   Color="#fca41c" 
+                                   HorizontalOptions="FillAndExpand" 
+                                   VerticalOptions="EndAndExpand"/>
+    </Grid>
+</ContentPage>

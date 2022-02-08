@@ -1,0 +1,53 @@
+﻿@page "/Day/Index"
+
+@inject IStringLocalizer<IndexComponent> Loc
+
+@attribute [Authorize]
+<!-- ============================================================== -->
+<!-- End Bread crumb and right sidebar toggle -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- Start Page Content -->
+<!-- ============================================================== -->
+<div class="row">
+    <!-- column -->
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">@Loc["DaysManagement"]</h4>
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <th width=20px>#</th>
+                                <th>@Loc["Day"]</th>
+                                <th>@Loc["Status"]</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <Virtualize TItem="CarCareApplication.Core.Shared.ViewModels.DayModels.IndexDayViewModel" Items="ItemsSource" Context="Item">
+                                <tr>
+                                    <td>@Item.Id</td>
+                                    <td>@Item.Name</td>
+                                    <td>
+                                        <AuthorizeView Roles="Admin">
+                                            <Authorized>
+                                                <div class="custom-control custom-switch">
+                                                    <input type="checkbox" class="custom-control-input" id="@Item.Id" checked="@Item.IsEnabled" @onclick="()=> ToggleEnable(Item.Id)" />
+                                                    <label class="custom-control-label" for="@Item.Id">@Loc["EnableOrDisable"]</label>
+                                                </div>
+                                            </Authorized>
+                                            <NotAuthorized>
+                                                <p>@Loc["NoActions"]</p>
+                                            </NotAuthorized>
+                                        </AuthorizeView>
+                                    </td>
+                                </tr>
+                            </Virtualize>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

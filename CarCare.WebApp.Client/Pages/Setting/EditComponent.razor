@@ -1,0 +1,70 @@
+﻿@page "/Setting/Edit/{Id:int}"
+
+@inject IStringLocalizer<EditComponent> Loc
+
+@attribute [Authorize(Roles = "Admin")]
+<!-- ============================================================== -->
+<!-- End Bread crumb and right sidebar toggle -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- Start Page Content -->
+<!-- ============================================================== -->
+<!-- Row -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header bg-info">
+                <h4 class="m-b-0 text-white">@Loc["EditSetting"] </h4>
+            </div>
+            <div class="card-body">
+                <EditForm Model="ViewModel" OnValidSubmit="OnValidSubmitAsync">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
+                    <div class="form-body">
+                        <div class="row p-t-20">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label" asp-for="ViewModel.KilometerMin"> @Loc["MinimumKilometers"]</label>
+                                    <InputNumber class="form-control" @bind-Value="ViewModel.KilometerMin" />
+                                </div>
+                            </div>
+                            <!--/span-->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label" asp-for="ViewModel.KilometerMax"> @Loc["MaximumKilometers"] </label>
+                                    <InputNumber class="form-control" @bind-Value="ViewModel.KilometerMax" />
+                                </div>
+                            </div>
+                            <!--/span-->
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label" asp-for="ViewModel.KilometerRate"> @Loc["Rate"]</label>
+                                    <InputNumber class="form-control" @bind-Value="ViewModel.KilometerRate" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label"> @Loc["Service"]</label>
+                                    <InputSelect @bind-Value="SelectedService" class="custom-select">
+                                        @foreach (var item in ServicesSouce)
+                                        {
+                                            <option value="@item.Id">@item.Name</option>
+                                        }
+                                    </InputSelect>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-info"> <i class="fa fa-check"></i>  @Loc["Save"]</button>
+                            <button type="button" class="btn btn-dark">  @Loc["Cancel"]</button>
+                        </div>
+                    </div>
+                </EditForm>
+            </div>
+        </div>
+    </div>
+</div>

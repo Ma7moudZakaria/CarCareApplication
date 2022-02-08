@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="{x:DynamicResource BackgroundColor}"
+             xmlns:VM="clr-namespace:CarCareApplication.ViewModels.Home"
+             Shell.NavBarIsVisible="False"             
+             FlowDirection="{x:Static Device.FlowDirection}"
+             xmlns:resource="clr-namespace:CarCareApplication.Resources" 
+             x:Class="CarCareApplication.Views.Home.HomePage">
+    <ContentPage.BindingContext>
+        <VM:HomeViewModel x:Name="HomeViewModel"/>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout Margin="10">
+        <Frame CornerRadius="150" HorizontalOptions="Center" Padding="0" VerticalOptions="Start" Margin="0,10" BackgroundColor="{x:DynamicResource BackgroundColor}">
+            <Image Source="logo.png" HeightRequest="150" WidthRequest="150" HorizontalOptions="Center" VerticalOptions="Center"/>
+        </Frame>
+        <Label Text="{x:Static resource:Language.AppHomeText}" HorizontalOptions="Center" MaxLines="7"
+                       Style="{x:DynamicResource SemiBoldText}"
+                       LineBreakMode="WordWrap"  HorizontalTextAlignment="Center"/>
+
+        <StackLayout Padding="12" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Orientation="Horizontal">
+            <Label Text="{x:Static resource:Language.PoweredBy}" FontSize="14" VerticalOptions="Center" FontFamily="{x:DynamicResource Light}" TextColor="Black"/>
+            <Image Source="bittechs.png" HeightRequest="120" WidthRequest="200">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{x:Binding BittechsNavigation}"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </StackLayout>
+        <Button Text="{x:Static resource:Language.MakeAnAppointment}"  Margin="9" HeightRequest="50" Command="{x:Binding MakeAppoinmentCommand}" FontFamily="{x:DynamicResource Black}" VerticalOptions="EndAndExpand"/>
+
+    </StackLayout>
+</ContentPage>

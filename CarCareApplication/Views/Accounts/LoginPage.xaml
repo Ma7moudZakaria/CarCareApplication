@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:VM="clr-namespace:CarCareApplication.ViewModels.Account"           
+             FlowDirection="{x:Static Device.FlowDirection}"
+
+             BackgroundColor="{x:DynamicResource BackgroundColor}"  
+             Shell.NavBarHasShadow="False"
+             xmlns:resource="clr-namespace:CarCareApplication.Resources" 
+             x:Class="CarCareApplication.Views.Accounts.LoginPage">
+
+    <ContentPage.BindingContext>
+        <VM:SigninViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout  VerticalOptions="CenterAndExpand" Margin="9" Padding="0">
+
+            <!--  Label to display the title of this page  -->
+
+                <Entry Style="{x:DynamicResource BasicEntry}" Placeholder="{x:Static resource:Language.PhoneNumber}" Keyboard="Telephone" Text="{x:Binding PhoneNumber}" FontFamily="{x:DynamicResource Light}"/>
+
+            
+                <Entry  IsPassword="True" Style="{x:DynamicResource BasicEntry}" Placeholder="{x:Static resource:Language.Password}" Keyboard="Text" Text="{x:Binding Password}" FontFamily="{x:DynamicResource Light}"/>
+
+            
+                <Button Text="{x:Static resource:Language.Login}" HeightRequest="50" CornerRadius="5" Command="{x:Binding SigninCommand}" FontFamily="{x:DynamicResource Bold}"/>
+
+            <ActivityIndicator IsRunning="{x:Binding IsRunning}" 
+                                   Color="#fca41c" 
+                                   HorizontalOptions="FillAndExpand" 
+                                   VerticalOptions="EndAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

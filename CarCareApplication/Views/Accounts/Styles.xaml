@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ResourceDictionary
+    x:Class="CarCareApplication.Views.Accounts.Styles"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!--- Vehicle Page -->
+
+    <x:String x:Key="Black">Black</x:String>
+    <x:String x:Key="Matrial">Matrial</x:String>
+    <x:String x:Key="Bold">Bold</x:String>
+    <x:String x:Key="ExtraLight">ExtraLight</x:String>
+    <x:String x:Key="Light">Light</x:String>
+    <x:String x:Key="Regular">Regular</x:String>
+    <x:String x:Key="SemiBold">SemiBold</x:String>
+
+    <Style TargetType="BoxView" x:Key="Separator">
+        <Setter Property="HeightRequest" Value="1"/>
+        <Setter Property="Color" Value="#2980b9"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+    </Style>
+    
+    <Style TargetType="Label" x:Key="LightText">
+        <Setter Property="FontFamily" Value="{x:DynamicResource Light}"/>
+        <Setter Property="TextColor" Value="{x:DynamicResource HeaderTextColor}"/>
+        <Setter Property="FontSize" Value="Default"/>
+    </Style>
+    <Style TargetType="Label" x:Key="ExtraLightText">
+        <Setter Property="FontFamily" Value="{x:DynamicResource ExtraLight}"/>
+        <Setter Property="TextColor" Value="{x:DynamicResource HeaderTextColor}"/>
+        <Setter Property="FontSize" Value="Default"/>
+    </Style>
+    <Style TargetType="Label" x:Key="SemiBoldText">
+        <Setter Property="FontFamily" Value="{x:DynamicResource SemiBold}"/>
+        <Setter Property="TextColor" Value="{x:DynamicResource HeaderTextColor}"/>
+        <Setter Property="FontSize" Value="Default"/>
+    </Style>
+    <Style TargetType="Label" x:Key="BoldText">
+        <Setter Property="FontFamily" Value="{x:DynamicResource Bold}"/>
+        <Setter Property="TextColor" Value="{x:DynamicResource HeaderTextColor}"/>
+        <Setter Property="FontSize" Value="Default"/>
+    </Style>
+    <Color x:Key="CardColor">#003763</Color>
+    
+    <Style TargetType="Frame" x:Key="VehicleFrame">
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="BackgroundColor" Value="{x:StaticResource CardColor}"/>
+        <Setter Property="Margin" Value="5"/>
+    </Style>
+
+    <Style TargetType="Entry" x:Key="BasicEntry">
+        <Setter Property="TextColor" Value="Black"/>
+        <Setter Property="BackgroundColor" Value="#ecf0f1"/>
+        <Setter Property="PlaceholderColor" Value="Black"/>
+    </Style>
+
+    <Style TargetType="Label" x:Key="VehicleTitleStyle">
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="FontSize" Value="Title"/>
+        <Setter Property="TextColor" Value="White"/>
+    </Style>
+    <Style TargetType="Label" x:Key="VehicleSubtitleStyle">
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="FontSize" Value="Subtitle"/>
+        <Setter Property="TextColor" Value="White"/>
+    </Style>
+
+
+    <!--- Service Page -->
+    <Style TargetType="Label" x:Key="ServiceTitleStyle">
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="FontSize" Value="Title"/>
+        <Setter Property="TextColor" Value="White"/>
+    </Style>
+    <Style TargetType="Label" x:Key="ServiceSubtitleStyle" BasedOn="{x:StaticResource ServiceTitleStyle}">
+        <Setter Property="FontSize" Value="16"/>
+    </Style>
+    <Style TargetType="Frame" x:Key="ServiceFrame" BasedOn="{x:StaticResource VehicleFrame}">
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="Padding" Value="6"/>
+    </Style>
+
+    <!--- Appointment Page -->
+
+    <Style TargetType="Label" x:Key="AppointmentTitleStyle">
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+        <Setter Property="FontSize" Value="Title"/>
+        <Setter Property="TextColor" Value="Black"/>
+    </Style>
+    
+    <Style TargetType="Button" x:Key="AppointmentButtonStyle">
+        <Setter Property="FontSize" Value="Subtitle"/>
+        <Setter Property="TextColor" Value="White"/>
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+    </Style>
+    
+    
+    <!--- Signup & Login -->
+
+    <!-- Address -->
+    <Style TargetType="Frame" x:Key="AddressFrame">
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="BackgroundColor" Value="White"/>
+    </Style>
+
+    <!-- Account -->
+    <Style TargetType="Frame" x:Key="AccountFrame">
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="BackgroundColor" Value="White"/>
+    </Style>  
+    
+    <!-- Account -->
+    <Style TargetType="Frame" x:Key="AppointmentFrame">
+        <Setter Property="CornerRadius" Value="2"/>
+        <Setter Property="BackgroundColor" Value="{x:DynamicResource BackgroundColor}"/>
+        <Setter Property="Padding" Value="2"/>
+    </Style>
+
+</ResourceDictionary>
